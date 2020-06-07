@@ -1,0 +1,18 @@
+columns:
+    question:
+        label: question
+        type: text
+        searchable: true
+    question_number:
+        label: question_number
+        type: text
+        sortable: true
+    options:
+        label: options
+        type: text
+    created_at:
+        label: created_at
+        type: datetime
+    updated_at:
+        label: updated_at
+        type: datetime

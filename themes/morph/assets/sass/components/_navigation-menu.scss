@@ -1,0 +1,254 @@
+//-------------------------
+//----------- NAV MENU
+//-------------------------
+
+.nav-menu {
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+	//background-color: $c-white;
+	z-index: 666;
+    transform: translateY(-100%);
+    opacity: 0;
+    visibility: hidden;
+	transition: all 1s cubic-bezier(0.77, 0, 0.175, 1);
+	&.open {
+		transform: translateY(0%);
+		visibility: visible;
+		opacity: 1;
+		.navBox, 
+		.half {
+			transform: translateY(0%);
+			transition: transform 1.6s cubic-bezier(0.77, 0, 0.175, 1), flex 0.5s ease-in-out, background 0.2s;
+			transition: all ease-out 0.3s;
+			-ms-transition: all ease-out 0.3s;
+		}
+		.nav:after {
+			transform: translateY(0%);
+		}
+		.navBox:first-of-type {
+			@include breakpoint(tablet) {
+				background-position: 0 36%;
+			}
+		}
+		.navBox:nth-of-type(2) {
+			@include breakpoint(tablet) {
+				background-position: 0 60%;
+			}
+		}
+	}
+}
+
+.nav-menu {
+	.nav {
+		display: flex;
+		position: relative;
+		padding-top: 12.2rem;
+		height: 100%;
+		width: 100vw;
+		@include breakpoint(tablet) {
+			display: block;
+			flex-direction: column;
+		}
+		@include breakpoint(mobile) {
+			padding-top: 10rem;
+		}		
+		&:after {
+			display: block;
+			position: absolute;
+			content: "";
+			background-color: $c-white;
+			top: 0rem;
+			left: 0;
+			width: 100%;
+			height: 12.2rem;
+			transition: transform 1s cubic-bezier(0.77, 0, 0.175, 1);
+			z-index: 7;
+			transform: translateY(320%);
+			@include breakpoint(mobile) {
+				height: 10rem;
+				transform: translateY(120%);
+			}
+		}
+	}
+	height: 100vh;
+	.navBox, 
+	.half {
+		position: relative;
+		margin-right: 0px;
+		flex: 1;
+		height: 100%;
+		// transition: transform 0.2s cubic-bezier(0.77, 0, 0.175, 1);
+		transition: all linear 0.5s;
+		overflow: hidden;
+		transform: translateY(-120%);
+		z-index: 1;
+		background-repeat: repeat;
+		background-size: cover;
+		background-position: top center;
+		background-color: black;
+		-webkit-backface-visibility: hidden;
+		@include breakpoint(tablet) {
+			display: block;
+			height: 25%;
+			background-position: center;
+		}
+		a {
+			display: block;
+			width: 100%;
+			height: 100%;
+			background-color: rgba(0,0,0,0.15);
+			z-index: 55;
+			span {
+				display: block;
+				position: relative;
+				padding: 8rem 0 0 5rem;
+				font-size: 3.6rem;
+				font-weight: 600;
+				color: $c-white;
+				z-index: 5;
+				transform: translateX(-300px);
+				transition: all ease-in-out 1.4s;
+				@include breakpoint(mobile) {
+					padding: 4rem 0 0 4.6rem;
+					font-size: 2.4rem;
+				}
+			}
+			// span.nav-bg-holder {
+			// 	position: absolute;
+			// 	top: 0;
+			// 	left: 0;
+			// 	right: 0;
+			// 	margin: 0;
+			// 	height: 100%;
+				
+			// 	z-index: -1;
+			// 	background-color: black;
+			// 	transform: translateY(0);
+			// }
+		}
+		&:hover {
+			@include breakpoint(exeptGadgets) {
+				flex: 1.1;
+				-webkit-backface-visibility: hidden;
+				-webkit-transform: translateZ(0) scale(1.0, 1.0);
+			}
+		}
+	}
+	.navBox:nth-of-type(1) {
+		background-size: 120%;
+		background-position: right;
+		@include breakpoint(tablet) {
+			background-size: 100%;
+		}
+	}
+	.navBox:nth-of-type(1):hover {
+		@include breakpoint(exeptGadgets) {
+			background-size: 125%;
+		}
+	}
+	.navBox:nth-of-type(2) {
+		//transition: transform 1.2s cubic-bezier(0.77, 0, 0.175, 1);
+		background-position: bottom;
+	}
+	.half {
+		display: flex;
+		flex-direction: column;
+		//transition: transform 1.8s cubic-bezier(0.77, 0, 0.175, 1);
+		background-color: $c-green;
+		margin-left: -10px;
+		@include breakpoint(tablet) {
+			//display: block;
+			height: 50%;
+			margin-left: 0;
+		}
+		.navBox {
+			// width: 100%;
+			// height: 50%;
+			background-color: $c-green;
+			@include breakpoint(tablet) {
+				height: 50%;
+			}
+			&:first-child {
+				background-color: $c-morphMain;
+			}
+			a {
+				background-color: transparent;
+				span.nav-bg-holder {
+					background-color: transparent;
+				}
+			}
+		}	
+	}
+}
+
+.nav-menu.open {
+	.navBox,
+	.half {
+		a span {
+			transform: translateX(0);
+		}
+	}
+}
+
+@media screen and (max-width: 1700px) {
+	.nav-menu {
+		.navBox:nth-of-type(1) {
+			background-size: 170%;
+			background-position: right;
+			@include breakpoint(tablet) {
+				background-size: 100%;
+			}
+		}
+		.navBox:nth-of-type(1):hover {
+			@include breakpoint(exeptGadgets) {
+				background-size: 165%;
+			}
+		}
+	}
+}
+
+@media screen and (max-width: 1300px) {
+	.nav-menu {
+		.navBox:nth-of-type(1) {
+			background-size: 190%;
+			background-position: right;
+			@include breakpoint(tablet) {
+				background-size: 100%;
+			}
+		}
+		.navBox:nth-of-type(1):hover {
+			@include breakpoint(exeptGadgets) {
+				background-size: 195%;
+			}
+		}
+	}
+}
+
+@media screen and (max-width: 1200px) {
+	.nav-menu {
+		.navBox:nth-of-type(1) {
+			background-size: cover;
+			background-position: right;
+		}
+		.navBox:nth-of-type(1):hover {
+			@include breakpoint(exeptGadgets) {
+				background-size: cover;
+			}
+		}
+	}
+}
+
+// @media screen and (max-width: 1024px) {
+// 	.nav-menu {
+// 		.navBox:nth-of-type(1) {
+// 			background-size: 120%;
+// 			background-position: right;
+// 			@include breakpoint(tablet) {
+// 				background-size: 100%;
+// 			}
+// 		}
+// 	}
+// }

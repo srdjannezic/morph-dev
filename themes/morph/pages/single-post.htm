@@ -1,0 +1,40 @@
+title = "Single Post"
+url = "/single-post/:slug"
+layout = "default"
+is_hidden = 0
+robot_index = "index"
+robot_follow = "follow"
+
+[blogPosts]
+pageNumber = "{{ :page }}"
+postsPerPage = 2
+noPostsMessage = "No posts found"
+relatedPosts = "{{ yes }}"
+sortOrder = "published_at desc"
+categoryPage = 404
+postPage = "single-post"
+
+[blogPost]
+slug = "{{ :slug }}"
+categoryPage = 404
+==
+<div id="single-pg">
+    <div class="container">    
+    {% component 'blogPost' %}
+    </div>
+    <section class="section blog-section">
+	    <div class="container">
+	        <div class="blog-top">
+	            <div class="left">
+	                <div class="subtitle">
+	                    <h4><span><img src="{{ url('/storage/app/media/icon-book.svg') }}"></span>We Have a Lot to Say!</h4>
+	                </div>
+	                <h2 class="title"><p>More Stories<br><strong>Like This.</strong></p></h2>
+	            </div>
+	        </div>
+
+	        {% component 'blogPosts' %}
+
+	    </div>
+	</section>
+</div>

@@ -1,0 +1,11 @@
+name: Questions
+modelClass: Standard\JoinUsQuiz\Models\Questions
+form: $/standard/joinusquiz/models/questions/fields.yaml
+defaultRedirect: standard/joinusquiz/questions
+create:
+    redirect: 'standard/joinusquiz/questions/update/:id'
+    redirectClose: standard/joinusquiz/questions
+update:
+    redirect: standard/joinusquiz/questions
+    redirectClose: standard/joinusquiz/questions
+preview: {  }

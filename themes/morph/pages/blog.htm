@@ -1,0 +1,26 @@
+title = "Blog"
+url = "/blog"
+layout = "default"
+is_hidden = 0
+robot_index = "index"
+robot_follow = "follow"
+
+[blogPosts]
+pageNumber = "{{ :page }}"
+postsPerPage = 4
+noPostsMessage = "No posts found"
+sortOrder = "published_at desc"
+categoryPage = 404
+postPage = "single-post"
+
+[blogPost]
+slug = "{{ :slug }}"
+categoryPage = 404
+==
+<div id="blog-pg">
+    <section>
+        <div class="container">
+            {% component 'blogPosts' %}
+        </div>
+    </section>
+</div>

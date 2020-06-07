@@ -1,0 +1,11 @@
+name: Positions
+modelClass: Standard\Positions\Models\Positions
+form: $/standard/positions/models/positions/fields.yaml
+defaultRedirect: standard/positions/positions
+create:
+    redirect: 'standard/positions/positions/update/:id'
+    redirectClose: standard/positions/positions
+update:
+    redirect: standard/positions/positions
+    redirectClose: standard/positions/positions
+preview: {  }

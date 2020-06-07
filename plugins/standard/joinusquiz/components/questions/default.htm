@@ -1,0 +1,48 @@
+{% set questions = __SELF__.q %}
+
+{% for question in questions %}
+	{% set extra_class = '' %}
+	{% if loop.first %}
+		{% set extra_class = 'q-first' %}
+	{% elseif loop.last %}
+		{% set extra_class = 'q-last' %}
+	{% endif %}
+	<div class="q-modal modal {{ extra_class }}" id="q-modal-{{question.question_number}}" role="dialog">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="q-header modal-header">
+					<h1 class="q-number">{{ question.question_number }}.</h1>
+					<p class="q-question">{{ question.question }}</p>
+					 <button type="button" class="test-close" data-dismiss="modal">&times;</button>
+				</div>
+				<div class="q-body modal-body">
+					{{ question.options | raw }}
+				</div>
+				<div class="q-footer modal-footer">
+					<span class="q-nav">{{ question.question_number }} / {{ total_questions + 1 }}</span>
+					<a class="btn-next" data-next="{{ question.question_number + 1 }}">Next</a>
+				</div>
+			</div>
+		</div>
+	</div>
+{% endfor %}
+
+	<div class="q-modal modal" id="q-modal-finish" role="dialog">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="q-header modal-header">
+
+				</div>
+				<div class="q-body modal-body">
+					<div class="subtitle">
+					<h4><span><img src="{{ url('/storage/app/media/icon-clap-hands.svg') }}"></span>Say Hello,<br>or Drop Us a Line!</h4>
+					</div>
+					<h1 class="done-message">All done<br/><strong>thanks!<strongt></h1>
+				</div>
+				<div class="q-footer modal-footer">
+
+					<a class="btn-finish">Finish</a>
+				</div>
+			</div>
+		</div>
+	</div>

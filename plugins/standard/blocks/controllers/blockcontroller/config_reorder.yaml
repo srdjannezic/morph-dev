@@ -1,0 +1,5 @@
+title: BlockController
+modelClass: Standard\Blocks\Models\StandardBlock
+nameFrom: id
+toolbar:
+    buttons: reorder_toolbar

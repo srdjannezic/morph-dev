@@ -1,0 +1,139 @@
+//-------------------------
+//----------- HEADER
+//-------------------------
+.page-home,
+.page-about,
+.page-blog {
+	.header {
+		z-index: 555;
+	}
+}
+.header {
+	position: fixed;
+	width: 100%;
+	height: 12.2rem;
+	top: 0;
+	left: 0;
+	
+	transition: all ease-out 1s;
+	@include breakpoint(tablet) {
+		background-color: $c-white;
+		z-index: 999;
+	}
+	@include breakpoint(mobile) {
+		height: 10rem;
+	}
+	&.start {
+		.logo {
+			opacity: 1;
+			transform: translateY(-50%);
+			svg path {
+				transition: none;
+			}
+		}
+	}
+	.logo {
+		@include absolute(center-vertical);
+		left: 5rem;
+		font-size: 4.5rem;
+		width: 18rem;
+		height: 4.6rem;
+		opacity: 0;
+		transform: translateY(-1000px);
+		transition: all ease-in-out 1s;
+		transition: all ease-in-out 0.3s;
+		@include breakpoint(tablet) {
+			opacity: 1;
+			transform: translateY(-50%);
+			left: 4.6rem;
+		}
+		i:before {
+			transition: all ease-out 1s;
+			color: $c-white;
+		}
+		svg,
+		#bd-morph-logo {
+			width: 100%;
+			//transition: all ease-out 1s!important;
+		}
+		svg path {
+			transition: all ease-out 0.3s;
+			@include breakpoint(tablet) {
+				stroke: $c-morphMain!important;
+				fill: $c-morphMain!important;
+
+				&:last-child {
+					// display: none;
+				}
+			}
+		}
+		&.ease {
+			svg path {
+				transition: none!important;
+			}
+		}
+		&.changed {
+			i:before {
+				fill: $c-morphMain;
+				transition: all ease-in-out 0.2s;
+				color: $c-morphMain;
+			}
+			i.icon-morph-logotype {
+				display: none;
+			}
+			svg {
+				transition: all ease-out 0.5s!important;
+			}
+			svg>g>g:nth-child(2) {
+				transition: all ease-out 0.5s!important;
+				display: none!important;
+			}
+			svg path {
+				stroke: $c-morphMain!important;
+				fill: $c-morphMain!important;
+				&:last-child {
+					// display: none;
+				}
+			}
+		}
+	}
+	&.in-menu {
+		z-index: 9999999;
+		.logo {
+			i:before {
+				color: $c-morphMain!important;
+			}
+			svg path {
+				transition: all ease-in-out 0.3s;
+				stroke: $c-morphMain!important;
+				fill: $c-morphMain!important;
+				&:last-child {
+					// display: none;
+				}
+			}	
+		}
+		.menu-btn {
+			path {
+				stroke: $c-morphMain!important;
+			}
+		}
+
+	}
+}
+
+.header-holder {
+	display: none;
+	width: 100%;
+	height: 12.2rem;
+	@include breakpoint(tablet) {
+		display: block;
+	}
+	@include breakpoint(mobile) {
+		height: 10rem;
+	}
+}
+
+
+*, *:focus {
+	-webkit-tap-highlight-color: transparent;
+} 

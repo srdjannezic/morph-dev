@@ -1,0 +1,21 @@
+1.0.0: 'Plugin Init'
+1.0.1:
+    - 'Tables created'
+    - create_mavitm_compon_mtmdata.php
+1.0.2:
+    - 'Updated table mavitm_compon_mtmdata'
+    - builder_table_update_mavitm_compon_mtmdata.php
+1.1.0:
+    - 'Grid list add'
+    - 'section type remove'
+1.2.0:
+    - 'Menu manager add'
+    - 'new add parent_type field'
+    - add_parent_type_field_to_table.php
+1.2.1:
+    - 'Tab application issue resolved'
+    - 'carousel closed captioning added'
+1.2.2:
+    - 'Added controller relation'
+1.2.3:
+    - 'Carousel fields modification'

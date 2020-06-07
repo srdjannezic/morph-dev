@@ -1,0 +1,14 @@
+fields:
+    question:
+        label: 'Question:'
+        span: full
+        type: text
+    options:
+        label: Content
+        size: ''
+        span: full
+        type: richeditor
+    question_number:
+        label: 'Question Number:'
+        span: auto
+        type: number

@@ -1,0 +1,11 @@
+plugin:
+    name: 'standard.blocks::lang.plugin.name'
+    description: 'standard.blocks::lang.plugin.description'
+    author: wollson
+    icon: oc-icon-th-large
+    homepage: ''
+navigation:
+    main-menu-item:
+        label: 'standard.blocks::lang.plugin.name'
+        url: standard/blocks/regioncontroller
+        icon: icon-th

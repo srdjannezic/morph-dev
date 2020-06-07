@@ -1,0 +1,547 @@
+description = "Default layout"
+
+[menu]
+start = "id-5"
+activeNode = 0
+listItemClasses = "item"
+primaryClasses = "nav nav-pills"
+secondaryClasses = "dropdown-menu"
+numberOfLevels = 2
+==
+{% set og_title = this.page.meta_title %}
+
+{% set og_desc = this.page.meta_description %}
+
+{% set og_url = 'http://morphnetworks.com/' ~ this.page.id %}
+
+{% set twitter_title = "Belgrade's High Performance Outsourcing Company" %}
+
+{% set og_image = 'themes/morph/assets/images/morph-networks-thumb.jpg?=v1.5' %}
+
+<!DOCTYPE html>
+
+<html>
+
+    <head>
+
+        <meta charset="utf-8">
+
+        <title>
+
+        {% if this.page.components['blogPost'].post.attributes.title is not null %}
+
+            {{ this.page.components['blogPost'].post.attributes.title }}
+
+            {% if this.page.components['blogPost'].post.attributes.thumbnail %}
+                {% set og_image = '/storage/app/media' ~ this.page.components['blogPost'].post.attributes.thumbnail %}
+            {% else %}
+                {% set og_image = '/storage/app/media' ~ this.page.components['blogPost'].post.attributes.featured %}
+            {% endif %}
+
+            {% set og_desc = this.page.components['blogPost'].post.attributes.content %}
+
+            {% set og_title = this.page.components['blogPost'].post.attributes.title %}
+
+            {% set twitter_title = og_title %}
+
+            {% set og_url = 'http://morphnetworks.com/' ~ this.page.id ~ '/' ~ this.page.components['blogPost'].post.attributes.slug %}
+
+            {% if this.page.components['blogPost'].post.attributes.seo_image %}
+                {% set og_image = '/storage/app/media' ~ this.page.components['blogPost'].post.attributes.seo_image %}
+            {% endif %}
+
+        {% elseif this.page.meta_title %} 
+
+            {{ this.page.meta_title }} 
+
+        {% else %}
+
+             {{ this.page.title }} 
+
+        {% endif %} - Morph</title>
+
+        <meta name="description" content="{{ og_desc|slice(0, 200) }}">
+
+        <meta name="title" content="{{ this.page.meta_title }}">
+
+        <meta name="author" content="OctoberCMS">
+
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <meta name="generator" content="OctoberCMS">
+
+        <meta property="og:url" content="{{ og_url }}">
+
+        <meta property="og:type" content="article" />
+
+        <meta content="{{ og_title }}" property="og:title" />
+
+        <meta content="{{ og_desc|slice(0, 200) }}" property="og:description" />
+
+        <meta property="og:image" content="{{ url(og_image) }}">
+
+        <meta property="og:image:url" content="{{ url(og_image) }}">
+
+        <meta property="og:image:type" content="image/jpg">
+
+        <meta property="og:image:width" content="1024">
+
+        <meta property="og:image:height" content="1024">
+
+        <meta name="twitter:card" content="summary" />
+
+        <meta name="twitter:title" content="{{ twitter_title }}" />
+
+        <meta name="twitter:description" content="Morph Networks is a Belgrade based company providing high quality outsourcing services to American based companies." />
+
+
+
+        <link rel="icon" type="image/png" href="{{ 'assets/images/favicon-32x32.png'|theme }}">
+
+    <!--     <link href="{{ 'assets/css/theme.css'|theme }}" rel="stylesheet"> -->
+
+        <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,900" rel="stylesheet">
+
+        <link href="{{ 'assets/css/style.css?=v2.92'|theme }}" rel="stylesheet">
+
+        <link href="{{ 'assets/css/fullpage.min.css'|theme }}" rel="stylesheet">
+
+        <link href="{{ 'assets/css/animate.css'|theme }}" rel="stylesheet">
+
+        <link href="{{ 'assets/css/bootstrap.min.css'|theme }}" rel="stylesheet">
+
+        <link rel="apple-touch-icon" sizes="180x180" href="{{ 'assets/images/apple-touch-icon.png'|theme }}">
+
+        <link rel="icon" type="image/png" sizes="32x32" href="{{ 'assets/images/favicon-32x32.png'|theme}}">
+
+        <link rel="icon" type="image/png" sizes="16x16" href="{{ 'assets/images/favicon-16x16.png'|theme}}">
+
+
+
+        <link rel="apple-touch-icon" sizes="57x57" href="{{ 'assets/images/apple-icon-57x57.png' |theme}}">
+
+        <link rel="apple-touch-icon" sizes="60x60" href="{{ 'assets/images/apple-icon-60x60.png' |theme}}">
+
+        <link rel="apple-touch-icon" sizes="72x72" href="{{ 'assets/images/apple-icon-72x72.png' |theme}}">
+
+        <link rel="apple-touch-icon" sizes="76x76" href="{{ 'assets/images/apple-icon-76x76.png' |theme}}">
+
+        <link rel="apple-touch-icon" sizes="114x114" href="{{ 'assets/images/apple-icon-114x114.png' |theme}}">
+
+        <link rel="apple-touch-icon" sizes="120x120" href="{{ 'assets/images/apple-icon-120x120.png' |theme}}">
+
+        <link rel="apple-touch-icon" sizes="144x144" href="{{ 'assets/images/apple-icon-144x144.png' |theme}}">
+
+        <link rel="apple-touch-icon" sizes="152x152" href="{{ 'assets/images/apple-icon-152x152.png' |theme}}">
+
+        <link rel="apple-touch-icon" sizes="180x180" href="{{ 'assets/images/apple-icon-180x180.png' |theme}}">
+
+        <link rel="icon" type="image/png" sizes="192x192"  href="{{ 'assets/images/android-icon-192x192.png' |theme}}">
+
+        <link rel="icon" type="image/png" sizes="32x32" href="{{ 'assets/images/favicon-32x32.png' |theme}}">
+
+        <link rel="icon" type="image/png" sizes="96x96" href="{{ 'assets/images/favicon-96x96.png' |theme}}">
+
+        <link rel="icon" type="image/png" sizes="16x16" href="{{ 'assets/images/favicon-16x16.png' |theme}}">
+
+        <link rel="manifest" href="{{ 'assets/images//manifest.json' |theme}}">
+
+        <meta name="msapplication-TileColor" content="#ffffff">
+
+        <meta name="msapplication-TileImage" content="{{ 'assets/images/ms-icon-144x144.png' |theme}}">
+
+        <meta name="theme-color" content="#ffffff">
+
+        <link rel="mask-icon" href="{{ 'assets/images/safari-pinned-tab.svg' |theme}}" color="#5bbad5">
+
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-134373696-1"></script>
+        <script>
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+
+          gtag('config', 'UA-134373696-1');
+        </script>
+
+
+        <!-- Facebook Pixel Code -->
+
+        <script>
+
+          !function(f,b,e,v,n,t,s)
+
+          {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+
+          n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+
+          if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+
+          n.queue=[];t=b.createElement(e);t.async=!0;
+
+          t.src=v;s=b.getElementsByTagName(e)[0];
+
+          s.parentNode.insertBefore(t,s)}(window, document,'script',
+
+          'https://connect.facebook.net/en_US/fbevents.js');
+
+          fbq('init', '638617393233937');
+
+          fbq('track', 'PageView');
+
+        </script>
+
+        <noscript><img height="1" width="1" style="display:none"
+
+          src="https://www.facebook.com/tr?id=638617393233937&ev=PageView&noscript=1"
+
+        /></noscript>
+
+        <!-- End Facebook Pixel Code -->
+
+        {% styles %}
+
+    </head>
+
+    <body class="page-{{ this.page.id }}">
+
+        <div id="fb-root"></div>
+        <script>(function(d, s, id) {
+          var js, fjs = d.getElementsByTagName(s)[0];
+          if (d.getElementById(id)) return;
+          js = d.createElement(s); js.id = id;
+          js.src = 'https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v3.2';
+          fjs.parentNode.insertBefore(js, fjs);
+        }(document, 'script', 'facebook-jssdk'));</script>
+
+        <div class="preloader"><img src="/storage/app/media/morph-load.gif" alt=""></div>
+
+        {% if this.page.id == 'home' %}
+
+        <div id="bd-morph"></div>
+
+        {% endif %}
+
+        <div class="siteWrapper">
+
+            <!-- Header -->
+
+            <header id="header" class="header morph-move">
+
+                {% partial 'site/header' %}
+
+            </header>
+
+            <div class="header-holder"></div>
+
+
+
+            {% component 'menu' %}
+
+
+
+            <!-- Content -->
+
+            <main id="content" class="main-content">
+
+                {% page %}
+
+            </main>
+
+
+
+            <!-- Footer -->
+
+            <div class="bottom-fade"></div>
+
+            <footer id="footer" class="footer morph-move">
+
+                {% partial 'site/footer' %}
+
+            </footer>
+
+        </div>
+
+
+
+        <a class="autoplay-trigger"></a>
+
+        <!-- Scripts -->
+
+        <script src="{{ 'assets/vendor/jquery.js'|theme }}"></script>
+
+        <script src="{{ 'assets/vendor/bootstrap.js'|theme }}"></script>
+
+        <script src="{{ 'assets/javascript/app.js'|theme }}"></script>
+
+        {% scripts %}
+
+        {% framework extras %}
+
+        <script type="text/javascript" src="{{ 'assets/javascript/bootstrap.min.js'|theme }}"></script>
+
+        <script type="text/javascript" src="{{ 'assets/javascript/main.js?v=1.25'|theme }}"></script>
+
+        {% if this.page.id == 'home' %}
+
+        <script type="text/javascript" src="{{ 'assets/javascript/fullpage.min.js?=v1.1'|theme }}"></script>
+
+        <script type="text/javascript" src="{{ 'assets/javascript/fullpage.extensions.min.js'|theme }}"></script>
+
+        <script type="text/javascript" src="{{ 'assets/javascript/fullpage.scrollHorizontally.min.js'|theme }}"></script>
+
+        {% endif %}
+
+        
+
+        <script type="text/javascript" src="{{ 'assets/javascript/wow.min.js'|theme }}"></script> 
+
+        <script type="text/javascript" src="{{ 'assets/javascript/lottie.min.js'|theme }}"></script>
+
+        <script type="text/javascript">
+
+
+
+            {% if this.page.id == 'home' %}
+
+            //-- Preload ainmation home
+
+                $(document).ready(function() { 
+
+                    setTimeout(function(){
+
+                        $('.page-home .preloader').fadeOut('slow');
+
+                    }, 1500)
+
+                });
+
+            //-- Mobile on scroll remove bd-morph
+
+                if($(window).width() < 1024) {
+
+                    $(window).scroll(function(){
+
+                        $("#bd-morph").hide();
+
+                    });
+
+                }
+
+
+
+            //-- Home SVG big ainmation
+
+                var morphAnimation;
+
+                var bdHolder = document.getElementById('bd-morph');
+
+                var animation = {
+
+                    container: bdHolder,
+
+                    renderer: 'svg',
+
+                    autoplay: true,
+
+                    rendererSettings: {
+
+                        progressiveLoad:true
+
+                    },
+
+                    path: '/themes/morph/assets/json/data.json'
+
+                }
+
+                setTimeout(function(){
+
+                    morphAnimation = bodymovin.loadAnimation(animation);
+
+                }, 1400);
+
+
+
+            //-- FULLPAGE JS 
+
+                $(document).ready(function() {
+
+                    function changeLogo() {
+
+                        const screen = $(window);
+
+                        const whiteSection = $('.section.about');
+
+
+
+                        if(whiteSection.offset().top - 10 < screen.scrollTop()) {
+
+                            $('.logo, .menu-btn, .btn-contact').addClass('changed');
+
+                        }
+
+                        else {
+
+                            $('.logo, .menu-btn, .btn-contact').removeClass('changed');
+
+                        }
+
+                    }
+
+                    if($(window).width() > 1024){
+
+
+
+                        $('#fullpage').fullpage({
+
+                            //options here
+
+                            licenseKey: '7423C0C8-1C17409C-9B425C37-391CFE70',
+
+                            autoScrolling:true,
+
+                            navigation: true,
+
+                            navigationPosition: 'right',
+
+                            navigationTooltips: ['Home','About Us', 'Services', 'Join Our Team', ''],
+
+                            scrollHorizontally: true,
+
+                            scrollHorizontallyKey: 'bW9ycGhuZXR3b3Jrcy5jb21fallPYzJOeWIyeHNTRzl5YVhwdmJuUmhiR3g1VTYw',
+
+                            //fadingEffect: true, 
+
+                            afterLoad: function(){
+
+                                if(loaded) {
+
+                                    loaded.destroy();
+
+                                    loaded = bodymovin.loadAnimation(animationLogo);
+
+                                }
+
+                                changeLogo();
+
+                            }
+
+                        });
+
+                    }
+
+                    //methods
+
+                    // $.fn.fullpage.setAllowScrolling(false);
+
+                });
+
+
+
+           
+
+            {% endif %}
+
+
+
+            {% if this.page.id == 'about' %}
+
+            //-- Preload ainmation about
+
+                $(document).ready(function() { 
+
+                    setTimeout(function(){
+
+                        $('.page-about .preloader').fadeOut('slow');
+
+                    }, 1000)
+
+                });
+
+           
+
+            {% endif %}
+
+
+
+            //-- LOGO ainmation
+
+            var animationLogo = {
+
+                container: document.getElementById('bd-morph-logo'),
+
+                renderer: 'svg',
+
+                autoplay: true,
+
+
+
+                path: '/themes/morph/assets/json/morph-logo.json'
+
+            }
+
+            var loaded;
+
+            loaded = bodymovin.loadAnimation(animationLogo);
+
+
+
+
+
+            $(document).ready(function(){
+
+                {% if this.page.id == 'home' %}
+
+                //-- WOW animation home - mobile
+
+                    if($(window).width() < 1025) {
+
+                        var wow = new WOW({});
+
+                        //-- WOW init
+
+                        wow.init();
+
+                    }
+
+                //-- On load elements show - home   
+
+                    setTimeout(function(){
+
+                         $('.page-home .morph-move, #fp-nav.fp-right, #bd-morph, #bd-morph-logo').addClass('start');      
+
+                    }, 6000);
+
+                {% else %}
+
+                //-- Preload ainmation ABOUT
+
+                    setTimeout(function(){
+
+                        $('.preloader').fadeOut('slow');
+
+                    }, 800)
+
+                //-- WOW animation 
+
+                    var wow = new WOW({});
+
+                    wow.init();
+
+                //-- On load elements show - home   
+
+                    setTimeout(function(){
+
+                        $('.morph-move').addClass('start');    
+
+                    }, 1000);
+
+                {% endif %}
+
+            });
+
+        </script>
+
+    </body>
+
+</html>

@@ -1,0 +1,54 @@
+//-------------------------
+//----------------VARIABLES
+//-------------------------
+
+//-----COLORS
+$c-black           : #000;
+$c-white           : #fff;
+
+$c-morphMain       : #5c2483;
+$c-green           : #00a19a;
+$c-titleColor      : #3c3c3b;
+$c-textColor       : #646464;
+
+$c-softAmber        : #cbbba0;
+
+$c-navBlue         : #005a92;
+$c-subBlue         : #025b94;
+$c-lightBlue       : #81deff;
+$c-lightBlue-hover : #4EABCC;
+$c-titleBlue       : #005b94;
+$c-titleBlue-hover : #00427B;
+$c-text            : #505050;
+$c-textGrey        : #a0adb2;
+$c-bgGrey          : #ebebeb;
+$c-mainRed         : #ff2069;
+$c-mainRed-hover   : #E60750;
+$c-redText         : #f3236b;
+$c-dotGrey         : #898989;
+    
+
+ 
+
+//-----PATHS
+$localFontBase: "/templates/hotel-template/fonts/";
+$imgBaseUrl   : "/images/";
+
+
+//------DIMENSIONS
+$baseFontSize: 10;
+$fullWidth: 100%;
+$fullHeight: 100%;
+
+//------FONT
+$fontDefault: Arial, Helvetica, Tahoma, sans-serif;
+$baseFont: 'Poppins', sans-serif;
+
+
+
+//------MEDIA QUERIES
+$desktop--Large  : 1700px;
+$desktop         : 1440px;
+$tablet          : 1023px;
+$mobile			 : 767px;
+

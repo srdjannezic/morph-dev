@@ -1,0 +1,12 @@
+title: BlockController
+modelClass: Standard\Blocks\Models\StandardBlock
+list: $/standard/blocks/models/standardblock/columns.yaml
+recordUrl: 'standard/blocks/blockcontroller/update/:id'
+noRecordsMessage: 'backend::lang.list.no_records'
+recordsPerPage: 20
+showSetup: true
+showCheckboxes: true
+toolbar:
+    buttons: list_toolbar
+    search:
+        prompt: 'backend::lang.list.search_prompt'

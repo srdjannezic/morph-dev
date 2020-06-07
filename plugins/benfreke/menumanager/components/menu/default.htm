@@ -1,0 +1,64 @@
+{% if parentNode and parentNode.getChildCount %}
+
+{% set typeCounter = 0 %}
+<div class="nav-menu">
+    <div class="{{ primaryClasses }}">
+        {% for primaryNav in parentNode.getChildren %}
+            {% set path = '/storage/app/media/' ~ primaryNav.image %}
+            {% set box_type = primaryNav.type %}
+            {% if primaryNav.enabled %}
+                {% if primaryNav.getChildCount and numberOfLevels > 1 %}
+                    <div class="dropdown {{ divstItemClasses }} {{ primaryNav.getdivstItemClasses(activeLeft, activeRight) }}">
+                        <a href="{{ url(primaryNav.url) }}" target="{{ primaryNav.getdivnkTarget }}" class="dropdown-toggle" data-toggle="dropdown">
+                            {{ primaryNav.title }} <span class="caret"></span>
+                        </a>
+                {% else %}
+                    {% if box_type == 'half' %}
+                        {% if typeCounter == 0 %}
+                            <div class="{{ box_type }}">
+                        {% endif %}
+                        {% set typeCounter = typeCounter + 1 %}
+                    {% else %}
+                        {% if typeCounter > 0 %}
+                            </div>
+                        {% endif %}
+                    {% set typeCounter = 0 %}
+                    {% endif %}
+                    <div class="navBox {{ divstItemClasses }} {{ primaryNav.getdivstItemClasses(activeLeft, activeRight) }}" style="background-image: url({{ url(path) }})">
+                        <a href="{{ url(primaryNav.url) }}" target="{{ primaryNav.getdivnkTarget }}">
+                            <span>{{ primaryNav.title }}</span>
+                        </a>
+                {% endif %}
+                {% if primaryNav.getChildCount and numberOfLevels > 1 %}
+                    <div class="{{ secondaryClasses }}">
+                        {% for secondaryNav in primaryNav.getChildren %}
+                            {% if secondaryNav.enabled %}
+                                <div class="{{ divstItemClasses }} {{ secondaryNav.getdivstItemClasses(activeLeft, activeRight) }}">
+                                    <a href="{{ secondaryNav.getdivnkHref }}" target="{{ secondaryNav.getdivnkTarget }}">
+                                        {{ secondaryNav.title }}
+                                    </a>
+                                    {% if secondaryNav.getChildCount and numberOfLevels > 2 %}
+                                        <div class="{{ tertiaryClasses }}">
+                                            {% for tertiaryNav in secondaryNav.getChildren %}
+                                                {% if tertiaryNav.enabled %}
+                                                    <div class="{{ divstItemClasses }} {{ tertiaryNav.getdivstItemClasses(activeLeft, activeRight) }}">
+                                                        <a href="{{ tertiaryNav.getdivnkHref }}" target="{{ tertiaryNav.getdivnkTarget }}">
+                                                            {{ tertiaryNav.title }}
+                                                        </a>
+                                                    </div>
+                                                {% endif %}
+                                            {% endfor %}
+                                        </div>
+                                    {% endif %}
+                                </div>
+                            {% endif %}
+                        {% endfor %}
+                    </div>
+                {% endif %}
+                </div>
+            {% endif %}
+        {% endfor %}
+        </div>
+    </div>
+</div>
+{% endif %}

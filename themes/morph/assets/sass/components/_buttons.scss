@@ -1,0 +1,341 @@
+//-------------------------
+//----------- BUTTONS
+//-------------------------
+
+//-- Menu Button
+
+
+.header.start {
+	.menu-btn {
+		opacity: 1;
+		transform: translateY(-50%);
+
+	}
+}
+.menu-btn {
+	@include absolute(center-vertical);
+	opacity: 0;
+	transform: translateY(-1000px);
+	transition: all ease-in-out 1s;
+	right: 5rem;
+	@include breakpoint(tablet) {
+		right: 4.6rem;
+		opacity: 1;
+		transform: translateY(-50%);
+	}
+	.ham-morph {
+		width: 39px;
+		height: 24px;
+		position: relative;
+		//margin: 2rem auto;
+		//margin-top: 2.5rem;
+		-webkit-transform: rotate(0deg);
+		-moz-transform: rotate(0deg);
+		-o-transform: rotate(0deg);
+		transform: rotate(0deg);
+		-webkit-transition: .3s ease-in-out;
+		-moz-transition: .3s ease-in-out;
+		-o-transition: .3s ease-in-out;
+		transition: .3s ease-in-out;
+		cursor: pointer;
+		&:hover {
+			span:first-child,
+			span:last-child {
+				@include breakpoint(exeptGadgets) {
+					left: 0.5rem;
+				}	
+			}
+		}
+		@include breakpoint(mobile) {
+			width: 35px;
+		}
+		@include breakpoint(mobile--s) {
+			width: 32px;
+			height: 20px;
+		}
+	}
+	.ham-morph span {
+		display: block;
+		position: absolute;
+		height: 3px;
+		width: 100%;
+		background: #fff;
+		opacity: 1;
+		left: 0;
+		-webkit-transform: rotate(0deg);
+		-moz-transform: rotate(0deg);
+		-o-transform: rotate(0deg);
+		transform: rotate(0deg);
+		-webkit-transition: 0.4s ease-in-out;
+		-moz-transition: 0.4s ease-in-out;
+		-o-transition: 0.4s ease-in-out;
+		transition: 0.4s ease-in-out;
+		@include breakpoint(tablet) {
+			background: $c-morphMain;
+		}
+		@include breakpoint(mobile--s) {
+			height: 2px;
+		}
+	}
+	.ham-morph span:nth-child(1) {
+		top: 0px;
+	}
+
+	.ham-morph span:nth-child(2),.ham-morph span:nth-child(3) {
+	  top: 10px;
+	  @include breakpoint(mobile--s) {
+	  	top: 8px;
+	  }
+	}
+
+	.ham-morph span:nth-child(4) {
+	  top: 20px;
+	  @include breakpoint(mobile--s) {
+	  	top: 16px;
+	  }
+	}
+
+	&.cross {
+		.ham-morph span {
+			background: $c-morphMain;
+		}
+		.ham-morph span:nth-child(1) {
+		  top: 2rem;
+		  width: 0%;
+		  left: 50%;
+		}
+
+		.ham-morph span:nth-child(2) {
+		  -webkit-transform: rotate(45deg);
+		  -moz-transform: rotate(45deg);
+		  -o-transform: rotate(45deg);
+		  transform: rotate(45deg);
+		}
+
+		.ham-morph span:nth-child(3) {
+		  -webkit-transform: rotate(-45deg);
+		  -moz-transform: rotate(-45deg);
+		  -o-transform: rotate(-45deg);
+		  transform: rotate(-45deg);
+		}
+
+		.ham-morph span:nth-child(4) {
+		  top: 2rem;
+		  width: 0%;
+		  left: 50%;
+		}
+	}
+	&.changed {
+		.ham-morph span {
+			background: $c-morphMain;
+		}
+	}
+}
+
+//-- Footer Buttons
+
+.btn-join,
+.btn-contact span {
+	@include absolute(center-vertical);
+	font-size: 1.8rem;
+	font-weight: 500;
+	@include breakpoint(mobile) {
+		//font-size: 2.3rem;
+	}
+	span {
+		width: 100%;
+	}
+}
+
+.btn-contact {
+	width: 20rem;
+	position: absolute;
+	bottom: 0;
+	height: 13.5rem;
+	color: $c-white;
+	//transition: all ease 0.1s;
+	@include breakpoint(tablet) {
+		height: 9.5rem;
+		left: 4.6rem;
+		display: none;
+	}
+	span {
+		left: 5rem;
+		@include breakpoint(mobile) {
+			left: 0;
+		}
+	}
+	&.changed {
+		span {
+			color: $c-morphMain;
+		}
+	}
+	&:hover {
+		span {
+			@include breakpoint(exeptGadgets) {
+				color: $c-green;
+				transform: translateY(-60%) scale(1.1)!important;
+			}
+		}
+	}
+}
+
+.btn-join-wrapper {
+	position: absolute;
+	right: 0;
+	bottom: 0;
+	height: 13.5rem;
+	width: 22.9rem;
+	@include breakpoint(mobile) {
+		height: 9rem;
+	}
+}
+
+.btn-join {
+	@include absolute(center);
+	width: 100%;
+	height: 13.5rem;
+	color: $c-white;
+	text-align: center;
+	overflow: hidden;
+	transition: all ease-in-out 0.2s;
+	line-height: 14rem;
+	background-color: $c-green;
+	@include breakpoint(mobile) {
+		height: 9rem;
+		line-height: 9rem;
+	}
+}
+
+.btn-join:before{
+    content: attr(data-text);
+    position: absolute;
+    top: -10.5rem;
+    color: $c-white;
+
+}
+.btn-join:hover{ 
+	@include breakpoint(exeptGadgets) {
+		line-height: 35rem; 
+		background-color: #008881;
+	}
+}
+
+.btn-readmore {
+	display: inline-block;
+	margin-top: 5.7rem;
+	z-index: 99;
+	position: relative;
+	@include breakpoint(tablet) {
+		margin-top: 0;
+		order: 4;
+	}
+	span {
+		margin-right: 2rem;
+		font-size: 1.5rem;
+		color: $c-softAmber;
+		@include breakpoint(tablet) {
+			font-size: 3.4rem;
+		}
+		@include breakpoint(mobile) {
+			font-size: 2.4rem;
+		}
+	}
+	i {
+		position: relative;
+		top: 0.16rem;
+		font-size: 1.4rem;
+		@include breakpoint(tablet) {
+			font-size: 2.4rem;
+		}
+		@include breakpoint(mobile) {
+			font-size: 1.8rem;
+		}
+	}
+}
+
+.btn-send,
+.btn-lost {
+	bottom: 4rem;
+	border: none;
+	background-color: $c-softAmber;
+	font-family: $baseFont;
+	font-size: 1.5rem;
+	color: $c-white;
+	padding: 2rem 7.4rem 2.1rem;
+	outline: none;
+	cursor: pointer;
+	@include breakpoint(tablet) {
+		font-size: 1.8rem;
+	}
+	@include breakpoint(mobile--s) {
+		width: 78%;
+	}
+}
+
+.page-contact-us {
+	.btn-send {
+		float: right;
+	}
+}
+
+.page-join-our-team {
+	.btn-send {
+		@include absolute(center-horizontal);
+	}
+}
+
+.page-join-our-team .btn-next,
+.page-join-our-team .btn-finish {
+	@include absolute(center-horizontal);
+	@extend .btn-send;
+	transform: translate(80%, -80%);
+	@include breakpoint(mobile) {
+		width: 50%;
+		left: 4rem;
+		transform: translate(0%, -80%);
+		text-align: center;
+	}
+}
+
+.page-join-our-team .btn-next {
+	@include breakpoint(mobile) {
+		position: static
+	}
+}
+
+.btn-visit-blog {
+	@include absolute(center-vertical);
+	right: 0;
+	padding: 2.3rem 6rem 2.3rem;
+	color: $c-white;
+	background-color: $c-softAmber;
+	span {
+		font-size: 1.5rem;
+		color: $c-white;
+	}
+}
+
+.playpause {
+	width: 12rem;
+	height: 12rem;
+	border-radius: 50%;
+	background: rgba(0,0,0,0.4);
+	border: 2px solid $c-white;
+	cursor: pointer;
+	@include absolute(center);
+	&:after {
+		font-family: icomoon;
+		display: block;
+		content: "\e905";
+		font-size: 2.8rem;
+		color: $c-white;
+		@include absolute(center);
+	}
+}
+
+.btn-watch-video {
+	cursor: pointer;
+}
+
+

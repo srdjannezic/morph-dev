@@ -1,0 +1,12 @@
+list: ~/plugins/benfreke/menumanager/models/menu/columns.yaml
+modelClass: BenFreke\MenuManager\Models\Menu
+title: 'benfreke.menumanager::lang.form.manage'
+recordUrl: 'benfreke/menumanager/menus/update/:id'
+noRecordsMessage: 'backend::lang.list.no_records'
+recordsPerPage: 50
+showTree: true
+showCheckboxes: true
+toolbar:
+    buttons: list_toolbar
+    search:
+        prompt: 'backend::lang.list.search_prompt'

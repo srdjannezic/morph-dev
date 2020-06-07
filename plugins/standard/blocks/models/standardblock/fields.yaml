@@ -1,0 +1,71 @@
+fields:
+    name:
+        label: Name
+        span: full
+        type: text
+    title:
+        label: Title
+        size: ''
+        span: full
+        type: richeditor
+    subtitle:
+        label: Subtitle
+        span: left
+        type: text
+    subtitle_icon:
+        label: 'Subtitle Icon'
+        mode: file
+        span: right
+        type: mediafinder
+    body:
+        label: Body
+        size: large
+        span: full
+        type: richeditor
+    categories:
+        label: Category
+        nameFrom: name
+        descriptionFrom: description
+        span: full
+        type: relation
+    region:
+        label: Region
+        nameFrom: name
+        descriptionFrom: description
+        span: left
+        type: relation
+    block_type:
+        label: 'Block type'
+        options:
+            type_1: 'Left: subtitle, title, text, link | Right: images'
+            type_2: 'Left: subtitle, title | Right: text, link, images'
+            type_3: 'Left: images | Right: subtitle, title, text, link'
+            type_4: 'Left: title | Right: subtitle, text, link, images'
+            type_5: 'Virtual Tour or Text'
+            type_6: 'subtitle, title, text'
+        span: right
+        type: dropdown
+    images:
+        label: Media
+        prompt: 'Add new item'
+        span: full
+        type: repeater
+        form:
+            fields:
+                images:
+                    label: 'Image or Video'
+                    mode: image
+                    span: left
+                    type: mediafinder
+                thumbnail:
+                    label: 'Video thumbnail'
+                    mode: file
+                    span: left
+                    type: mediafinder
+                is_autoplay:
+                    label: 'Is autoplay?'
+                    options:
+                        'yes': 'yes'
+                        'no': 'no'
+                    span: left
+                    type: radio

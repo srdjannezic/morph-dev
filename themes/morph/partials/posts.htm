@@ -1,0 +1,125 @@
+==
+{% set posts = posts %} 
+{% set post_counter = 0 %}
+{% set mainPost = FeaturedPost %}
+{% set feautured =  '/storage/app/media/' ~ mainPost.featured %}
+<div class="post-list">
+{% if this.page.id == 'blog' %}
+    <div class="post post-full">
+        <a href="single-post/{{ mainPost.slug }}">
+        <div class="img-wrapper">
+            {% if mainPost.video %}
+                {% set feautured =  '/storage/app/media/' ~ mainPost.video %}
+                {% set thumb = '/storage/app/media/' ~ mainPost.thumbnail %}
+                <div class="video-wrapper">
+                    <div class="img-thumbnail">
+                        <img src="{{ url(thumb) }}" />
+                    </div>
+                </div>
+            {% else %}
+            <img src="{{ url(feautured) }}" />
+            {% endif %}
+        </div>
+        <div class="post-intro">
+            <h3>{{ mainPost.title }}</h3>
+
+            <p class="info">
+                {% if mainPost.categories.count %} in {% endif %}
+                {% for category in mainPost.categories %}
+                    <a href="{{ category.url }}">{{ category.name }}</a>{% if not loop.last %}, {% endif %}
+                {% endfor %}
+                {{ mainPost.published_at|date('M d, Y') }}
+            </p>
+        </div>
+        </a>
+    </div>    
+{% endif %}
+    {% for post in posts %} 
+        {% set feautured =  '/storage/app/media/' ~ post.featured %}
+        {% set post_size = "half" %}
+        {% if post_counter == 0 and not is_ajax %} 
+            {% set post_size = "full" %} 
+        {% endif %}
+        
+        <div class="post post-half wow fadeInUp">
+            <a href="{{ post.url }}">
+                {% if post.video %}
+                {% set thumb = '/storage/app/media/' ~ post.thumbnail %}
+                <div class="video-wrapper">
+                    <div class="img-thumbnail">
+                        <img src="{{ url(thumb) }}" />
+                    </div>            
+                </div>
+                {% else %}
+                <div class="img-wrapper">
+                    <img src="{{ url(feautured) }}" />
+                </div>
+
+                {% endif %}
+                            <div class="post-intro">
+                <h3>{{ post.title }}</a></h3>
+
+                <p class="info">
+                    {% if post.categories.count %} in {% endif %}
+                    {% for category in post.categories %}
+                        <a href="{{ category.url }}">{{ category.name }}{% if not loop.last %}, {% endif %}
+                    {% endfor %}
+                    {{ post.published_at|date('M d, Y') }}
+                </p>
+            </div>
+            </a>
+        </div>
+        {% set post_counter = post_counter + 1 %}
+    {% else %}
+        <div class="no-data">{{ noPostsMessage }}</div>
+    {% endfor %}
+</div>
+
+{% if posts.lastPage > 1 and this.page.id == 'blog' %}
+<div class="row blog-bottom">
+    <nav aria-label="pagination">
+        <ul class="pagination pagination-lg pg-blue">
+            <!--Arrow right-->
+            {% if posts.lastPage > posts.currentPage %}
+            <li class="page-item">
+                <a class="load-more" href="?page={{posts.currentPage+1}}" aria-label="Next">
+                    Load More
+                </a>
+            <div class="blog-loader hide"><img src="{{ url('/themes/morph/assets/javascript/spinner.gif') }}" width="70"/></div> 
+            </li>
+
+            {% endif %}
+        </ul>
+    </nav>
+</div>
+{% else %}
+<div class="row blog-bottom">
+    <nav aria-label="pagination">
+        <ul class="pagination pagination-lg pg-blue">
+            {% if posts.currentPage > 1 %}
+            <!--Arrow left-->
+            <li class="page-item">
+                <a class="page-link" href="?page={{posts.currentPage-1}}" aria-label="Previous">
+                    <span class="sr-only">Previous</span>
+                    <i class="icon-arrow-left"></i>
+                </a>
+            </li>
+
+            {% endif %}
+
+            <!--Arrow right-->
+            {% if posts.lastPage > posts.currentPage %}
+            <li class="page-item">
+                <a class="page-link" href="?page={{posts.currentPage+1}}" aria-label="Next">
+                    <span class="sr-only">Next</span>
+                    <i class="icon-right-arrow"></i>
+                </a>
+            </li>
+            {% endif %}
+        </ul>
+    </nav>
+    {% if this.page.id != 'blog' %}
+    <a href="{{ url('/blog') }}" class="btn-visit-blog"><span>Visit Blog</span></a>
+    {% endif %}
+</div>
+{% endif %}

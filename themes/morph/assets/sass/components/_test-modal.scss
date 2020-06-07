@@ -1,0 +1,248 @@
+//-------------------------
+//--------TEST MODAL
+//-------------------------
+
+.page-join-our-team {
+	.modal-dialog {
+		position: absolute;
+		left: 50%;
+		top: 50%;
+		transform: translate(-50%, -50%)!important;
+		width: 1064px;
+		height: auto;
+		margin: 0;
+		@include breakpoint(tablet) {
+			top: 53%;
+			width: 90%;
+			height: auto;
+		}
+		.modal-content {
+			height: 100%;
+			padding: 8.5rem;
+			border: none;
+			border-radius: 0;
+			box-shadow: none;
+			@include breakpoint(mobile) {
+				padding: 4rem;
+			}
+		}
+	}
+	h1.q-number {
+		display: inline-block;
+		padding-bottom: 1rem;
+		font-size: 4.8rem;
+		font-weight: 900;
+		color: #c8c8c8;
+		vertical-align: middle;
+	}
+	p.q-question {
+		display: inline-block;
+		margin-left: 1rem;
+		font-size: 1.5rem;
+		@include breakpoint(tablet) {
+			display: inline;
+		}
+	}
+	.modal-header {
+		margin-bottom: 4rem;
+		padding: 0;
+		border-bottom: none;
+	}
+	.modal-body {
+		padding: 0 3.5rem;
+		margin-bottom: 8rem;
+
+		@include breakpoint(mobile) {
+			padding: 0 1rem;
+		}
+		p {
+			font-size: 1.5rem;
+			margin-bottom: 2rem;
+			input {
+				margin-right: 1.4rem;
+			}
+		}
+		textarea {
+			width: 100%;
+			height: 22rem;
+			padding: 1rem 1.6rem;
+			resize: none;
+			outline: none;
+			border: 1px solid #ccc;
+			font-family: $baseFont;
+			font-size: 1.5rem;
+		}
+		span {
+			margin-top: -2rem;
+			font-size: 1.2rem;
+			float: right;
+			@include breakpoint(tablet) {
+				margin-top: -1.6rem;
+			}
+		}
+		.subtitle {
+			h4 span {
+				margin-top: 0;
+			}
+		}
+	}
+	.modal-footer {
+		border-top: none;	
+	}
+	.done-message {
+		font-size: 8.5rem;
+		margin-bottom: 13rem;
+		@include breakpoint(mobile) {
+			font-size: 7rem;
+		}
+		strong {
+			font-weight: 700;
+		}
+	}
+}
+
+.q-first {
+	.modal-body {
+		column-count: 2;
+		@include breakpoint(mobile) {
+			column-count: 1;
+		}
+	}
+}
+
+#q-modal-finish {
+	h4 {
+		@include breakpoint(tablet) {
+			width: 100%;
+		}
+		
+	}
+}
+
+.q-modal {
+	[type="radio"]:checked,
+	[type="radio"]:not(:checked) {
+	    position: absolute;
+	    left: -9999px;
+	}
+	[type="radio"]:checked + label,
+	[type="radio"]:not(:checked) + label
+	{
+	    position: relative;
+	    padding-left: 3.5rem;
+	    cursor: pointer;
+	    line-height: 20px;
+	    display: inline-block;
+	    color: #666;
+	}
+	[type="radio"]:checked + label:before,
+	[type="radio"]:not(:checked) + label:before {
+	    content: '';
+	    position: absolute;
+	    left: 0;
+	    top: 0;
+	    width: 18px;
+	    height: 18px;
+	    border: 1px solid #ddd;
+	    border-radius: 100%;
+	    background: #fff;
+	}
+	[type="radio"]:checked + label:after,
+	[type="radio"]:not(:checked) + label:after {
+	    content: '';
+	    width: 12px;
+	    height: 12px;
+	    background: #898989;
+	    position: absolute;
+	    top: 4px;
+	    left: 4px;
+	    border-radius: 100%;
+	    -webkit-transition: all 0.2s ease;
+	    transition: all 0.2s ease;
+	}
+	[type="radio"]:not(:checked) + label:after {
+	    opacity: 0;
+	    -webkit-transform: scale(0);
+	    transform: scale(0);
+	}
+	[type="radio"]:checked + label:after {
+	    opacity: 1;
+	    -webkit-transform: scale(1);
+	    transform: scale(1);
+	}
+	label {
+		display: block;
+	    position: relative;
+	    padding-left: 3.5rem;
+	    cursor: pointer;
+	    -webkit-user-select: none;
+	    -moz-user-select: none;
+	    -ms-user-select: none;
+	    user-select: none;
+	    z-index: 55;
+	}
+}
+
+
+
+/* Hide the browser's default checkbox */
+ .q-modal input[type="checkbox"] {
+	position: absolute;
+	opacity: 0;
+	cursor: pointer;
+	height: 0;
+	width: 0;
+}
+
+/* Create a custom checkbox */
+.q-modal .checkmark {
+	position: absolute;
+	top: 0;
+	left: 0;
+	height: 2.5rem;
+	width: 2.5rem;
+	margin-top: 0!important;
+	background-color: white;
+    border: 1px solid #898989;
+}
+
+.q-modal p {
+	position: relative;
+	line-height: 2;
+}
+
+
+/* When the checkbox is checked, add a blue background */
+.q-modal input:checked ~ .checkmark {
+	background-color: #898989;
+}
+
+/* Create the checkmark/indicator (hidden when not checked) */
+.checkmark:after {
+	content: "";
+	position: absolute;
+	display: none;
+}
+
+/* Show the checkmark when checked */
+.q-modal input:checked ~ .checkmark:after {
+	display: block;
+}
+
+/* Style the checkmark/indicator */
+.q-modal .checkmark:after {
+	left: 0.8rem;
+	top: 0.3rem;
+	width: 5px;
+	height: 1rem;
+	border: solid white;
+	border-width: 0 2px 2px 0;
+	-webkit-transform: rotate(45deg);
+	-ms-transform: rotate(45deg);
+	transform: rotate(45deg);
+}
+
+.stripe-loading-indicator .stripe, .stripe-loading-indicator .stripe-loaded {
+	background: $c-morphMain!important;
+	box-shadow: none!important;
+}

@@ -1,0 +1,58 @@
+//-------------------------
+//----------- FOOTER
+//-------------------------
+
+.footer {
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	height: 13.5rem;
+	height: 0;
+	//z-index: 0;
+	@include breakpoint(tablet) {
+		z-index: 555;
+	}
+	// @include breakpoint(mobile) {
+	// 	height: 11rem;
+	// }
+	&.start {
+		.btn-join-wrapper {
+			opacity: 1;
+			transform: translateY(-0px);
+		}
+		.btn-contact span {
+			opacity: 1;
+			transform: translateY(-50%);
+		}
+	}
+}
+
+.btn-contact span,
+.btn-join-wrapper {
+	opacity: 0;
+	transform: translateY(1000px);
+	transition: all ease-in-out 0.3s;
+}
+
+.btn-join-wrapper {
+	transition: all ease-in-out 1.8s;
+}
+
+.bottom-fade {
+	@include breakpoint(tablet) {
+		display: none;
+		width: 100%;
+	    height: 20.5rem;
+	    z-index: 99;
+	    position: fixed;
+	    bottom: 0px;
+	    background: url('../images/bottom-fade.png') bottom center no-repeat;
+	}
+	@include breakpoint(mobile) {
+		//height: 9.5rem;
+	}
+	&.changed {
+		display: block;
+	}
+}

@@ -1,0 +1,621 @@
+//-------------------------
+//-----------JOIN US
+//-------------------------
+
+.page-join-our-team {
+	.header {
+		z-index: 55;
+	}
+	.section {
+		z-index: auto;
+	}
+	.logo {
+		svg path {
+			stroke: $c-morphMain!important;
+			fill: $c-morphMain!important;
+		}
+		svg>g>g:nth-child(2) {
+			transition: all ease-out 0.5s!important;
+			display: none!important;
+		}
+	}
+	.ham-morph span {
+		background: $c-morphMain;
+	}
+	.btn-contact {
+		color: $c-morphMain;
+	}
+	.btn-join-wrapper {
+		display: none;
+	}
+	.header-holder {
+		display: block;
+	}
+	.alert.alert-danger.alert-dismissible {
+		margin-top: 4rem;
+		.close {
+			display: none;
+		}
+		h4, p, ul li {
+			font-size: 1.2rem;
+			color: red!important;
+			margin-bottom: 0.5rem;
+		}
+	}
+	.modal {
+		z-index: 9999;
+	}
+	.alert.alert-success.alert-dismissible {
+		.close {
+			display: none;
+
+		}
+		p {
+			font-size: 3rem;
+			line-height: 1.4;
+			b {
+				font-weight: 700;
+			}
+		}
+	}
+}
+#join-pg {
+	.container {
+		@extend %clearfix;
+		height: 100%;
+	}
+
+	.section-0 {
+		.subtitle {
+			display: none;
+		}
+		.title {
+			margin-bottom: 0;
+		}
+		.container {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			padding-top: 0;
+			@include breakpoint(tablet) {
+				flex-direction: column;
+			}
+		}
+		margin-bottom: 8rem;
+		height: 62rem;
+		background-color: transparent;
+		@include breakpoint(tablet) {
+			margin-bottom: 0;
+		}
+		.left {
+			.text {
+				display: none;
+			}
+		}
+		.right {
+			@include breakpoint(tablet) {
+				order: 1;
+			}
+		}
+		@include breakpoint(tablet) {
+			height: auto;
+		}
+		.img-1,
+		.video-wrapper {
+			position: absolute;
+			top: 0rem;
+			right: 0;
+			width: 75rem;
+			height: 63rem;
+			overflow: hidden;
+			transition: all ease-in-out 0.3s;
+			img,
+			video {
+				@include absolute(center);
+				@include breakpoint(tablet) {
+					position: static;
+					transform: none;
+				}
+			}
+			video {
+				width: 100%;
+				transition: all ease-in-out 0.3s;
+				@include breakpoint(tablet) {
+					width: 100%;
+					left: 0;
+					right: auto;
+					top: auto;
+				}
+			}
+			@include breakpoint(tablet) {
+				position: static;
+				width: 100vw;
+				height: auto;
+				margin-left: -4.6rem;
+			}
+			&.wideVideo {
+				width: 85vw;
+				@include breakpoint(tablet) {
+					width: 100vw;
+				}
+				video {
+					width: 100%;
+				}
+			}
+			&:after {
+				@include breakpoint(tablet) {
+					content: "";
+					position: absolute;
+					top: 0;
+					left: 0;
+					width: 100%;
+					height: 99.5%;
+					background: rgba(0,0,0,0.4);
+				}
+			}
+
+		}
+		.video-wrapper {
+			@include breakpoint(tablet) {
+				position: relative;
+				top: 0;
+			}
+			.img-thumbnail {
+				img {
+					width: 100%;
+				}
+			}
+		}
+		.video-wrapper:after {
+				display: none;
+			}
+		.left {
+			@include breakpoint(tablet) {
+				display: flex;
+				justify-content: center;
+				align-items: center;
+			}
+			.title {
+				@include breakpoint(tablet) {
+					text-align: left;
+					z-index: 55;
+					color: $c-titleColor;
+					margin-top: 4rem;
+					margin-bottom: 4rem;
+				}
+				@include breakpoint(mobile) {
+					text-align: center;
+				}
+				p {
+					@include breakpoint(tablet) {
+						color: $c-white;
+						font-size: 8rem;
+						color: $c-titleColor;
+					}
+					@include breakpoint(mobile) {
+						font-size: 6rem;
+					}
+				}
+			}
+		}
+	}
+	.section-1 {
+		margin-bottom: 16rem;
+		@include breakpoint(tablet) {
+			margin-bottom: 0;
+		}
+		.container {
+			padding-top: 4rem;
+		}
+		.left{
+			float: right;
+			min-height: 59.5rem;
+			padding-left: 4rem;
+			@include breakpoint(tablet) {
+				min-height: auto;
+				padding-left: 0;
+			}
+		}
+		.right {
+			float: left;
+		}
+		.text {
+			@include breakpoint(tablet) {
+				order: 2;
+			}
+		}
+		.img-1 {
+			position: absolute;
+			left: 0;
+			right: auto;
+			width: 73rem;
+			height: 59.5rem;
+			max-width: 800px;
+			overflow: hidden;
+			@include breakpoint(tablet) {
+				// width: 100vw;
+				// height
+				position: relative;
+				margin-left: -4.6rem;
+			}
+			@include breakpoint(mobile) {
+				width: 100vw;
+				height: 39rem;
+			}
+			img {
+				@include absolute(center);
+				@include breakpoint(tablet) {
+					position: static;
+					transform: none;
+				}
+			}
+		}
+	}
+}
+
+#join-bottom {
+	background-color: #eee;
+	padding: 11rem 0 13.6rem;
+	.container {
+		display: table;
+		max-width: 120rem;
+	}
+	.section {
+		display: table-row;
+	}
+	.left,
+	.right {
+		display: table-cell;
+		@include breakpoint(tablet) {
+			display: block;
+		}
+	}
+	.right {
+		padding-top: 8rem;
+		@include breakpoint(tablet) {
+			padding-top: 0;
+		}
+	}
+	.text-container {
+		@include breakpoint(tablet) {
+			display: flex;
+			flex-direction: column;
+		}
+		.title {
+			@include breakpoint(tablet) {
+				order: 1;
+			}
+		}
+		.subtitle {
+			@include breakpoint(tablet) {
+				order: 2;
+			}
+		}
+		.text {
+			@include breakpoint(tablet) {
+				order: 3;
+			}
+		}
+	}
+	.panel-group {
+		position: relative;
+		width: 53rem;
+		float: right;
+		padding: 4rem 4rem 14rem;
+		background-color: $c-white;
+		//z-index: 555;
+		@include breakpoint(tablet) {
+			width: 100%;
+		}
+		@include breakpoint(mobile--s) {
+			padding: 3rem 3rem 14rem;
+		}
+	}
+	.panel-collapse.in {
+		height: auto;
+	}
+	.panel-collapse.out {
+		height: 0;
+		overflow: hidden;
+	}
+	.panel-default {
+		width: 53rem;
+		height: auto;
+		margin-bottom: 2rem;
+		background-color: $c-white;
+		overflow: hidden;
+		@include breakpoint(tablet) {
+			width: 100%;
+		}
+	}
+	.panel-heading {
+		position: relative;
+		width: 100%;
+		height: 6rem;
+		a,h4 {
+			display: block;
+			width: 100%;
+			height: 100%;
+			line-height: 4.2;
+			font-size: 1.4rem;
+			font-weight: 500;
+			color: $c-morphMain;
+			@include breakpoint(tablet) {
+				font-size: 2rem;
+				line-height: 3;
+			}
+		}
+		h4 {
+			padding: 0 2.5rem;
+		}
+		&.expand {
+			.icon-expand:after {
+				display: none;
+			}
+		}
+		.icon-expand {
+			@include absolute (center-vertical);
+			right: 2.5rem;
+			width: 18px;
+			height: 2px;
+			background-color: $c-morphMain;
+			@include breakpoint(mobile--s) {
+				width: 12px;
+				height: 1px;
+			}
+			&:after {
+				display: block;
+				content: "";
+				height: 18px;
+				width: 2px;
+				@include absolute(center);
+				background-color: $c-morphMain;
+				@include breakpoint(mobile--s) {
+					height: 12px;
+					width: 1px;
+				}
+			}
+		}
+	}
+	.select-box {
+		position: relative;
+		width: 100%;
+		height: 100%;
+		padding: 0 2rem;
+		font-family: $baseFont;
+		color: #aaa9a9;
+	    font-size: 1.2rem;
+	    outline: none;
+	    box-shadow: none;
+	    border: none;
+	    z-index: 55;
+	    background: transparent;
+	    @include breakpoint(tablet) {
+			font-size: 1.8rem;
+		}
+	    option {
+	    	padding: 1.6rem 0;
+	    }
+	}
+	
+	.panel-body {
+		padding: 1rem 4rem 3.6rem;
+		overflow: hidden;
+		p {
+			margin-bottom: 1.6rem;
+			font-size: 1.3rem;
+			line-height: 1.8;
+			@include breakpoint(tablet) {
+				font-size: 1.8rem;
+			}
+		}
+	}
+}
+
+.apply-form .select-input.input-wrapper {
+	position: relative;
+	margin-bottom: 2rem;
+
+	.select-box {
+		-webkit-appearance: none;
+		-moz-appearance:    none;
+		appearance:         none;
+		&:focus {
+			outline: none;
+		}
+	}
+	&:after {
+		@include absolute(center-vertical);
+		content: "";
+		right: 2rem;
+		width: 0; 
+		height: 0; 
+		border-left: 0.6rem solid transparent;
+		border-right: 0.6rem solid transparent;
+
+		border-top: 1.2rem solid #b0b0b0;
+		z-index: 0;
+		@include breakpoint(mobile--s) {
+			border-left: 6px solid transparent;
+			border-right: 6px solid transparent;
+
+			border-top: 10px solid #b0b0b0;
+		}
+	}
+
+}
+.position-description {
+	position: relative;
+	margin-bottom: 2rem;
+	padding: 0 0.1rem;
+	font-size: 1.2rem;
+	line-height: 1.5;
+	color: #646464;
+	@include breakpoint(tablet) {
+		font-size: 1.8rem;
+	}
+} 
+
+.panel-group {
+	.notice {
+		p {
+			padding: 0.2rem 0;
+			font-size: 1.1rem;
+			line-height: 1.4;
+		}
+	}
+}
+
+.apply-form {
+	width: 100%!important;
+	margin-top: 2rem;
+	@include breakpoint(tablet) {
+		margin-top: 0rem!important;
+	}
+}
+
+#apply-controls {
+	height: 8rem;
+	text-align: center;
+	@include breakpoint(mobile) {
+		height: 11rem;
+	}
+}
+.upload-cv {
+	display: inline-block;
+	position: relative;
+	padding: 2rem 2rem 2.1rem;
+	min-width: 14rem;
+	height: 4rem;
+	width: 32%;
+	&:first-child {
+		.is-populated:before {
+			content: "CV";
+			font-size: 2rem;
+			font-weight: 600;
+			color: $c-morphMain;
+			position: absolute;
+			top: 0.5rem;
+			left: -5rem;
+			display: block;
+			line-height: 1;
+		}
+	}
+	&.upload-video {
+		.is-populated:before {
+			content: "Video";
+			font-size: 2rem;
+			font-weight: 600;
+			color: $c-morphMain;
+			position: absolute;
+			top: 0.5rem;
+			left: -8rem;
+			display: block;
+			line-height: 1;
+		}
+	}
+	button{
+		font-size: 1.5rem;
+		font-weight: 700;
+		color: $c-morphMain;
+		background-color: transparent;
+		border: none;
+		cursor: pointer;
+		outline: none;
+	}
+	.is-populated {
+		@include absolute(center-horizontal);
+		background-image: url('../images/icon-check.svg');
+		background-repeat: no-repeat;
+		width: 3rem;
+		height: 3rem;
+		margin-left: 2rem;
+		background-size: 100%;
+	}
+}
+
+.page-join-our-team {
+	.responsiv-uploader-fileupload.style-file-multi .upload-files-container {
+		position: absolute;
+		border-radius: 0;
+		border: none;
+		.icon-container,
+		.info,
+		.meta {
+			display: none;
+		}
+	}
+
+	
+	.responsiv-uploader-fileupload.style-file-multi .upload-object {
+		border: none;
+	}
+	.responsiv-uploader-fileupload.style-file-multi.is-multi.is-populated {
+		.button {
+			display: none;
+		}
+	}
+	
+}
+
+.do-test.done {
+	font-size: 0;
+	@include absolute(center-horizontal);
+	background-image: url('../images/icon-check.svg');
+	background-repeat: no-repeat;
+	width: 3rem;
+	height: 3rem;
+	margin-left: 2rem;
+	background-size: 100%;
+	&:before {
+		content: "Test";
+		font-family: $baseFont;
+		font-weight: 600;
+		font-size: 2rem;
+		position: absolute;
+		top: 0.5rem;
+		left: -6rem;
+		display: block;
+		line-height: 1;
+	}
+}
+
+.test-close {
+	position: absolute;
+	top: 0;
+	right: 0;
+	font-family: $baseFont;
+	font-size: 5rem;
+	color: #646464;
+	width: 60px;
+	height: 60px;
+	line-height: 60px;
+	background-color: transparent;
+	border: none;
+	outline: none;
+	cursor: pointer;
+	@include breakpoint(mobile) {
+		width: 40px;
+		height: 40px;
+		line-height: 42px;
+	}
+}
+
+.page-join-our-team {
+	.q-nav {
+		position: relative;
+		margin-left: -15px;
+		//padding-left: 3.5rem;
+		bottom: 3rem;
+		float: left;
+		font-size: 3rem;
+		font-weight: 700;
+		color: rgb(200, 200, 200);
+		@include breakpoint(mobile) {
+			bottom: 0.5rem;
+		}
+	}
+}
+
+
+

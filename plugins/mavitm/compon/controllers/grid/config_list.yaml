@@ -1,0 +1,21 @@
+title: Grid
+modelClass: Mavitm\Compon\Models\Mtmdata
+list: $/mavitm/compon/models/mtmdata/parentList.yaml
+recordUrl: 'mavitm/compon/grid/update/:id'
+noRecordsMessage: 'backend::lang.list.no_records'
+showSetup: true
+showCheckboxes: true
+toolbar:
+    buttons: list_toolbar
+    search:
+        prompt: 'backend::lang.list.search_prompt'
+defaultSort:
+    column: sort_order
+    direction: asc
+recordsPerPage: 50
+showCheckboxes: true
+showSetup: true
+
+defaultSort:
+    column: created_at
+    direction: desc

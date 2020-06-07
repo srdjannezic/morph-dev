@@ -1,0 +1,30 @@
+columns:
+    name:
+        label: Name
+        type: text
+        searchable: true
+        sortable: true
+    id:
+        label: id
+        type: number
+        sortable: true
+    title:
+        label: title
+        type: text
+        searchable: true
+        sortable: true
+    body:
+        label: body
+        type: text
+    subtitle:
+        label: subtitle
+        type: text
+        searchable: true
+        sortable: true
+    categories:
+        label: category
+        select: name
+        relation: categories
+        type: text
+        searchable: true
+        sortable: true

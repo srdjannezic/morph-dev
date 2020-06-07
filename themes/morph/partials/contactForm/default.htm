@@ -1,0 +1,26 @@
+==
+<form data-request="{{ __SELF__ }}::onFormSubmit" class="morph-form" data-request-validate>
+
+    {{ form_token() }}
+
+    <div class="input-wrapper">
+        <input type="text" id="name" name="name" placeholder="First Name">
+    </div>
+
+    <div class="input-wrapper">
+        <input type="text" id="lastname" name="lastname" placeholder="Last Name">
+    </div>
+
+    <div class="input-wrapper">
+        <input type="text" id="email" name="email" placeholder="Email">
+    </div>
+
+
+    <div class="textarea-wrapper">
+        <textarea id="comments" name="comments" rows="8" cols="80" placeholder="Message"></textarea>
+    </div>
+
+    <div id="{{ __SELF__ }}_forms_flash"></div>
+
+    <button id="simpleContactSubmitButton" type="submit" class="btn-send">Send</button>
+</form>

@@ -1,0 +1,17 @@
+name: 'benfreke.menumanager::lang.menu.name'
+modelClass: BenFreke\MenuManager\Models\Menu
+form: ~/plugins/benfreke/menumanager/models/menu/fields.yaml
+defaultRedirect: benfreke/menumanager/menus
+create:
+    title: 'benfreke.menumanager::lang.form.create'
+    redirect: 'benfreke/menumanager/menus/update/:id'
+    redirectClose: benfreke/menumanager/menus
+    flash-save: 'benfreke.menumanager::lang.form.flashcreate'
+update:
+    title: 'benfreke.menumanager::lang.form.update'
+    redirect: benfreke/menumanager/menus
+    redirectClose: benfreke/menumanager/menus
+    flash-save: 'benfreke.menumanager::lang.form.flashupdate'
+    flash-delete: 'benfreke.menumanager::lang.form.flashdelete'
+preview:
+    title: 'benfreke.menumanager::lang.form.preview'

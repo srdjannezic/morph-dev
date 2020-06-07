@@ -1,0 +1,123 @@
+//-------------------------
+//---------------TYPOGRAPHY
+//-------------------------
+
+
+//------FONT-FACE
+
+@font-face {
+  font-family: 'icomoon';
+  src:  url('../fonts/icomoon/icomoon.eot?8e7nz');
+  src:  url('../fonts/icomoon/icomoon.eot?8e7nz#iefix') format('embedded-opentype'),
+    url('../fonts/icomoon/icomoon.ttf?8e7nz') format('truetype'),
+    url('../fonts/icomoon/icomoon.woff?8e7nz') format('woff'),
+    url('../fonts/icomoon/icomoon.svg?8e7nz#icomoon') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'icomoon' !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-play:before {
+  content: "\e905";
+}
+.icon-arrow-left:before {
+  content: "\e904";
+  color: #cbbba0;
+}
+.icon-right-arrow:before {
+  content: "\e902";
+  color: #cbbba0;
+}
+.icon-location:before {
+  content: "\e903";
+  color: #c9c9c9;
+}
+.icon-facebook:before {
+  content: "\e900";
+}
+.icon-google:before {
+  content: "\e901";
+}
+.icon-linked:before {
+  content: "\e906";
+}
+.icon-yt:before {
+  content: "\e907";
+}
+.icon-insta:before {
+  content: "\e908";
+}
+
+
+
+
+
+
+
+//------FONT-SIZE
+
+body {
+    //font-size: 0!important; 
+    color: $c-text;
+}
+
+$baseFontSize: 10px; // DO NOT CHANGE THIS
+
+html {
+    font-size: $baseFontSize;
+    //change this part
+    @include breakpoint (desktop--Large) {
+        font-size: 0.625vw;  // > 1600
+    }
+
+    @include breakpoint (desktop-fit) { // < 1600
+        font-size: 0.625vw; 
+    }
+    @include breakpoint (tablet) {
+        font-size: 1.01010101010101vw;//10px - 768px
+    }
+    @include breakpoint (mobile) {//10px - 540px
+        font-size: 1.851851851851852vw;
+    }
+    @include breakpoint (mobile--s) {//10px - 540px
+        font-size: 2.083333333333333vw;
+    }
+}
+
+
+// //------GLOBAL FONT SETTINGS
+
+// //------DEFAULT STYLES
+// b,
+// strong {
+//     font-weight: bold;
+// }
+// i,
+// em {
+//     font-style: italic;
+// }
+// u {
+//     text-decoration: underline;
+// }
+
+// h1 {
+//   font-size: 56px;
+// }
+
+// p {
+//   font-size: 18px;
+// }

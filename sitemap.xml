@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset
+      xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
+            http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+
+
+<url>
+  <loc>http://morphnetworks.com/</loc>
+  <lastmod>2019-02-12T15:57:11+00:00</lastmod>
+  <priority>1.00</priority>
+</url>
+<url>
+  <loc>http://morphnetworks.com/about</loc>
+  <lastmod>2019-02-12T15:57:11+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>http://morphnetworks.com/blog</loc>
+  <lastmod>2019-02-12T15:57:11+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>http://morphnetworks.com/contact-us</loc>
+  <lastmod>2019-02-12T15:57:11+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>http://morphnetworks.com/join-our-team</loc>
+  <lastmod>2019-02-12T15:57:11+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>http://morphnetworks.com/single-post/talent-is-overrated</loc>
+  <lastmod>2019-02-12T15:57:11+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://morphnetworks.com/single-post/ok-first-coffee</loc>
+  <lastmod>2019-02-12T15:57:11+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://morphnetworks.com/single-post/not-quite-sure-about-you</loc>
+  <lastmod>2019-02-12T15:57:11+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://morphnetworks.com/single-post/sweet-music</loc>
+  <lastmod>2019-02-12T15:57:11+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://morphnetworks.com/single-post/im-kind-specific-situation</loc>
+  <lastmod>2019-02-12T15:57:11+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://morphnetworks.com/single-post/team-building-and-car-crashing</loc>
+  <lastmod>2019-02-12T15:57:11+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://morphnetworks.com/single-post/perspective</loc>
+  <lastmod>2019-02-12T15:57:11+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://morphnetworks.com/single-post/when-life-gives-you-lemons</loc>
+  <lastmod>2019-02-12T15:57:11+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>http://morphnetworks.com/single-post/hunger-games</loc>
+  <lastmod>2019-02-12T15:57:11+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>http://morphnetworks.com/single-post/if-im-being-honest</loc>
+  <lastmod>2019-02-12T15:57:11+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>http://morphnetworks.com/single-post/excuse-me-do-you-speak-morph</loc>
+  <lastmod>2019-02-12T15:57:11+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>http://morphnetworks.com/single-post/weve-moved</loc>
+  <lastmod>2019-02-12T15:57:11+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+</urlset>

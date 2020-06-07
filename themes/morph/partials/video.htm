@@ -1,0 +1,49 @@
+{% set video_path = '/storage/app/media/' ~ video %} 
+{% set thumb_path = '' %}
+{% if thumbnail %}
+	{% set thumb_path = '/storage/app/media' ~ thumbnail %}
+{% endif %}
+{% set extra_class = " hide" %}
+{% set extra_class_wrapper = "" %}
+{% set video_visibility = "" %}
+{% set attributes = 'disablepictureinpicture  controlsList=nodownload' %}
+{% set video_classes = "video-box video-wrapper" %}
+
+
+{% if autoplay == "yes" %}
+	{% set loop = "loop" %}
+	{% set attributes = 'loop autoplay muted playsinline poster=' ~ thumb_path %}
+	{% set extra_class = ' autoplay' %}
+	{% set extra_class_wrapper = ' autoplay-box' %}
+	{% set video_classes = "video-wrapper" %}
+{% endif %}
+
+
+
+<div class="{{video_classes}} {{ direction }} wow {{ extra_class_wrapper }}" data-wow-duration="1.4s">
+	{% if thumbnail and autoplay != "yes" %}
+	<div class="img-thumbnail">
+		<img src="{{ url(thumb_path) }}" />
+		<div class="playpause"></div>
+	</div>
+	{% endif %}
+	{% if video %}
+	<div class="video-item">
+		<video {{ attributes }} {{ loop }} id="morph-video" class="video{{ extra_class }}">
+		  <source src="{{ url(video_path) }}" type="video/mp4">
+		Your browser does not support the video tag.
+		</video>
+	</div>	
+	{% endif %}
+</div>
+<div class="videoOverlay"><button class="lightbox-close">×</button></div>
+{% if autoplay == "yes" %}
+<script>
+
+    var video = document.getElementsByClassName('autoplay')[0]; 
+    console.log(video);
+    setTimeout(function(){
+    	video.play();
+	},1000);
+</script>
+{% endif %}

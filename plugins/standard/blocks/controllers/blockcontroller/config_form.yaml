@@ -1,0 +1,10 @@
+name: BlockController
+modelClass: Standard\Blocks\Models\StandardBlock
+form: $/standard/blocks/models/standardblock/fields.yaml
+defaultRedirect: standard/blocks/regioncontroller
+create:
+    redirect: 'standard/blocks/blockcontroller/update/:id'
+    redirectClose: standard/blocks/regioncontroller
+update:
+    redirect: standard/blocks/regioncontroller
+    redirectClose: standard/blocks/regioncontroller

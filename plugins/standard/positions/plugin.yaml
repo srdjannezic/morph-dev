@@ -1,0 +1,11 @@
+plugin:
+    name: 'standard.positions::lang.plugin.name'
+    description: 'standard.positions::lang.plugin.description'
+    author: standard
+    icon: oc-icon-location-arrow
+    homepage: ''
+navigation:
+    main-menu-item:
+        label: Positions
+        url: /standard/positions/positions
+        icon: icon-location-arrow

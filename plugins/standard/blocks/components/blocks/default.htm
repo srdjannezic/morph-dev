@@ -1,0 +1,243 @@
+{% set counter = 0 %}
+{% for block in __SELF__.blocks %}
+	{% set block_type = block.attributes.block_type %}
+	{% set title = block.attributes.title %}
+	{% set subtitle_icon = '/storage/app/media/' ~ block.attributes.subtitle_icon %}
+	{% set subtitle = block.attributes.subtitle %}
+	{% set images = block.attributes.images %}
+	{% set video = block.attributes.video %}
+	{% set videotime = block.attributes.videotime %}
+	{% set thumbnail = block.attributes.thumbnail %}
+	{% set autoplay = block.attributes.autoplay %}
+	{% set body = block.attributes.body %}
+	{% set region_id = block.attributes.region_id %}
+	{% set cat_id = block.attributes.category_id %}
+	{% set image_title = block.attributes.image_title %}
+
+	{% set direction = "fadeInLeftBig" %}
+	{% set op_direction = "fadeInRightBig" %}
+	{% if counter % 2 == 0 %}
+		{% set direction = "fadeInRightBig" %}
+		{% set op_direction = "fadeInLeftBig" %}		
+	{% endif %}
+
+
+	{% set page_link = "" %}
+
+	{% if cat_id == 2 or cat_id == 3 or  cat_id == 5 %}
+		{% set page_link = 'about-us' %}
+	{% elseif cat_id == 4 %}
+		{% set page_link = 'join-our-team' %}
+	{% endif %}
+
+	{% set id =  block.attributes.id %}
+
+	{% set section_class = page_link ~ id %}
+
+	{% if id == 22 %}
+		{% set section_class = 'services' %}
+	{% endif %}
+	
+	{% if region_id == 1 %}
+		<div class="slide block-{{ block.attributes.block_type }}">	
+	{% elseif block_type == 'type_6' %}
+	<!-- silence -->
+	{% else %}
+		<section class="section section-{{ counter }}" id="{{ section_class }}">
+	{% endif %}
+
+	{% if cat_id == 3 %}
+		{% set page_link = 'about-us#services' %}
+	{% endif %}
+
+
+	{% if block_type != 'type_6' %} <!-- not subtitle/title/text  -->
+		<div class="container">
+	{% endif %}
+
+	{% if block_type == 'type_2' %} <!-- left subtitle/title right text/link/images -->
+		{% set type2_class = "fadeInRightBig" %}
+		{% set type2_class_right = "" %}
+		{% if cat_id == 7 %} <!-- if stories -->
+			{% set type2_class = "fadeInLeftBig" %}
+			{% set type2_class_right = "fadeInRightBig" %}
+		{% endif %}
+		<div class="left wow {{type2_class}}" data-wow-duration="1.4s">
+			<div class="subtitle">
+				<h4><span>{% if block.attributes.subtitle_icon %}<img alt="{{ image_title }}" title="{{ image_title }}" src="{{ url(subtitle_icon) }}" />{% endif %}</span>{{ subtitle | raw }}</h4>
+			</div>
+			<h2 class="title">{{ title | raw }}</h2>
+		</div>
+		<div class="right wow {{type2_class_right}}">
+			<div class="text">{{ body | raw }}</div>
+
+			{% if cat_id == 5 and region_id == 1 %} <!-- if tour & home --> 
+				<span class="btn-readmore btn-watch-video" onclick="fullpage_api.moveSlideRight();"><span>Watch video</span><i class="icon-right-arrow"></i></span>
+			{% elseif region_id == 1 %} <!-- home -->
+				<a href="./{{ page_link }}" class="btn-readmore"><span>Read More</span><i class="icon-right-arrow"></i></a>
+			{% endif %}
+
+				<div class="image-box">
+					{% set imageCounter = 1 %}
+					{% if video %}	 
+						{% partial "video" direction=direction video=video thumbnail=thumbnail autoplay=autoplay region_id=region_id %}
+					{% else %}
+						{% for image in images %}
+							{% if image.images %}
+							{% set path = '/storage/app/media/' ~ image.images %}
+							<div class="img-{{ imageCounter }} wow fadeInLeftBig" data-wow-duration="1.4s">
+								<img alt="{{ image_title }}" title="{{ image_title }}" src="{{ url(path) }}" />
+							</div>
+							{% endif %}
+							{% set imageCounter = imageCounter + 1 %}
+						{% endfor %}
+					{% endif %}
+				</div>
+			</div>	
+			{% elseif block_type == 'type_3' %} <!-- left images/video right other -->
+				<div class="left fadeInLeftBig">
+					<div class="image-box">
+						{% set imageCounter = 1 %}
+						{% if video %}
+							 
+							{% partial "video" direction=direction video=video thumbnail=thumbnail autoplay=autoplay region_id=region_id %}
+						{% else %}
+						{% for image in images %}
+							{% if image.images %}
+							{% set path = '/storage/app/media/' ~ image.images %}
+							<div class="img-{{ imageCounter }} wow fadeInLeftBig" data-wow-duration="1.4s">
+								<img alt="{{ image_title }}" title="{{ image_title }}" src="{{ url(path) }}" />
+							</div>
+							{% endif %}
+							{% set imageCounter = imageCounter + 1 %}
+						{% endfor %}
+						{% endif %}
+					</div>
+				</div>
+				<div class="right wow fadeInRightBig" data-wow-duration="1.4s">
+					<div class="subtitle">
+						<h4><span>{% if block.attributes.subtitle_icon %}<img alt="{{ image_title }}" title="{{ image_title }}" src="{{ url(subtitle_icon) }}" />{% endif %}</span>{{ subtitle | raw }}</h4>
+					</div>
+					<h2 class="title">{{ title | raw }}</h2>
+					<div class="text">{{ body | raw }}</div>
+					{% if region_id == 1 %} <!-- home -->
+					<a href="./{{ page_link }}" class="btn-readmore"><span>Read More</span><i class="icon-right-arrow"></i></a>
+					{% endif %}
+				</div>	
+			{% elseif block_type == 'type_4' %} <!-- left title right other -->
+				<div class="left wow fadeInLeftBig" data-wow-duration="1.4s">
+					<h2 class="title">{{ title | raw }}</h2>
+				</div>
+				<div class="right">
+					<div class="subtitle">
+						<h4><span>{% if block.attributes.subtitle_icon %}<img alt="{{ image_title }}" title="{{ image_title }}" src="{{ url(subtitle_icon) }}" />{% endif %}</span>{{ subtitle | raw }}</h4>
+					</div>
+					<div class="text">{{ body | raw }}</div>
+					{% if region_id == 1 %} <!-- home -->
+					<a href="./{{ page_link }}" class="btn-readmore"><span>Read More</span><i class="icon-right-arrow"></i></a>
+					{% endif %}
+					<div class="image-box">
+						{% set imageCounter = 1 %}
+						{% if video %}
+							 
+							{% partial "video" direction=direction video=video thumbnail=thumbnail autoplay=autoplay region_id=region_id %}
+						{% else %}
+						{% for image in images %}
+							{% if image.images %}
+							{% set path = '/storage/app/media/' ~ image.images %}
+							<div class="img-{{ imageCounter }}">
+								<img alt="{{ image_title }}" title="{{ image_title }}" src="{{ url(path) }}" />
+							</div>
+							{% endif %}
+							{% set imageCounter = imageCounter + 1 %}
+						{% endfor %}
+						{% endif %}
+					</div>
+				</div>	
+			{% elseif block_type == 'type_5' %} <!-- virtual tour or text -->
+			<div class="image-box">
+				<div class="video-wrapper video-box special-video">
+					<div class="video-item">
+						<video class="video hide" preload="metadata" disablepictureinpicture controlsList="nodownload" src="{{ url('/storage/app/media/home-morph-video-tour.mp4') }}">
+						</video>
+					</div> 
+					<div class="img-thumbnail">
+						<img src="{{ url('/storage/app/media/morph-networks-home-video.jpg') }}" />
+						<div class="playpause"></div>
+					</div>
+				</div>
+				<div class="videoOverlay"><button class="lightbox-close">×</button></div>
+			</div>
+			{% elseif block_type == 'type_6' %} <!-- subtitle, title, text -->
+				<div class="text-container">
+					<div class="subtitle">
+						<h4><span>{% if block.attributes.subtitle_icon %}<img alt="{{ image_title }}" title="{{ image_title }}" src="{{ url(subtitle_icon) }}" />{% endif %}</span>{{ subtitle | raw }}</h4>
+					</div>
+					<h2 class="title">{{ title | raw }}</h2>
+					<div class="text">{{ body | raw }}</div>
+				</div>
+			{% else %} <!-- type 1 subtitle title text link right images -->
+				{% set type1_class = "fadeInLeftBig" %}
+				{% set type1_class_right = "" %}
+				{% if cat_id == 4 %}
+					{% if id != 20 %}
+						{% set type1_class = "fadeInRightBig" %}
+						{% set type1_class_right = "fadeInLeftBig" %}	
+					{% else %}
+						{% set type1_class_right = "fadeInRightBig" %}			
+					{% endif %}
+				{% elseif cat_id == 2 %}
+				{% set type1_class = "fadeInLeftBig" %}
+				{% set type1_class_right = "fadeInRightBig" %}				
+				{% endif %}
+
+				<div class="left wow {{type1_class}}" data-wow-duration="1.4s">
+					<div class="subtitle">
+						<h4>
+							<span>
+								{% if block.attributes.subtitle_icon %}
+								   <img alt="{{ image_title }}" title="{{ image_title }}" src="{{ url(subtitle_icon) }}" />
+								{% endif %}
+							</span>{{ subtitle | raw }}
+						</h4>
+					</div>
+					<h2 class="title">{{ title | raw }}</h2>
+					<div class="text">{{ body | raw }}</div>
+					{% if region_id == 1 %}
+					<a href="./{{ page_link }}" class="btn-readmore"><span>Read More</span><i class="icon-right-arrow"></i></a>
+					{% endif %}
+				</div>
+				<div class="right">
+					<div class="image-box">
+						{% set imageCounter = 1 %}
+						{% if video %}
+							 
+							{% partial "video" direction=direction video=video thumbnail=thumbnail autoplay=autoplay region_id=region_id %}
+						{% else %}
+							{% for image in images %}
+								{% if image.images %}
+								{% set path = '/storage/app/media/' ~ image.images %}
+								<div class="img-{{ imageCounter }} wow {{ type1_class_right }}" data-wow-duration="1.4s">
+									<img alt="{{ image_title }}" title="{{ image_title }}" src="{{ url(path) }}" />
+								</div>
+								{% endif %}
+								{% set imageCounter = imageCounter + 1 %}
+							{% endfor %}
+						{% endif %}
+					</div>
+				</div>	
+			{% endif %}
+		{% if block_type != 'type_6' %}
+		</div>	
+		{% endif %}
+	{% if region_id == 1 %}
+
+	</div>
+	{% elseif block_type == 'type_6' %}
+	<!-- silence -->
+	{% else %}
+	</section>
+	{% endif %}
+{% set counter = counter + 1 %}
+{%	endfor %}
+

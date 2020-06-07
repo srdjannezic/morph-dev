@@ -1,0 +1,10 @@
+fields:
+    name:
+        label: 'Position name:'
+        span: auto
+        type: text
+    description:
+        label: 'Position description:'
+        size: ''
+        span: full
+        type: richeditor

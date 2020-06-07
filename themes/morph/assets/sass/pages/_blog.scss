@@ -1,0 +1,309 @@
+//-------------------------
+//-----------BLOG
+//-------------------------
+
+.page-single-post {
+	.header-holder {
+		display: block;
+	}
+	.blog-section {
+		background: #eee;
+	}
+	blockquote {
+		text-align: center;
+	}
+}
+.page-blog,
+.page-single-post {
+	.logo {
+		svg path {
+			stroke: $c-morphMain!important;
+			fill: $c-morphMain!important;
+		}
+		svg>g>g:nth-child(2) {
+			transition: all ease-out 0.5s!important;
+			display: none!important;
+		}
+		@include breakpoint(tablet) {
+			transform: translateY(-50%);
+		}
+	}
+	.ham-morph span {
+		background: $c-morphMain;
+	}
+	.header-holder {
+		display: block;
+		@include breakpoint(tablet) {
+			display: block;
+		}
+	}
+	.single-top {
+		height: 50rem;
+		margin-bottom: 9rem;
+		@include breakpoint(tablet) {
+			height: auto;
+		}
+		@include breakpoint(mobile) {
+			margin-bottom: 4rem;
+		}
+		.img-wrapper,
+		.video-wrapper {
+			position: absolute;
+			width: 73rem;
+			height: 50rem;
+			right: 0;
+			top: 12.2rem;
+			overflow: hidden;
+			transition: all ease-in-out 0.3s;
+			@include breakpoint(tablet) {
+				position: relative;
+				width: 100vw;
+				height: 50rem;
+				margin-left: -4.6rem;
+				top: 0;
+			}
+			@include breakpoint(mobile) {
+				height: 30rem;
+			}
+			img,
+			video {
+				@include absolute(center);
+				width: 120%;
+				transition: all ease-in-out 0.3s;
+				@include breakpoint(tablet) {
+					width: 130%;
+				}
+			}
+			video {
+				width: 120%;
+			}
+			&.wideVideo {
+				width: 82vw;
+				@include breakpoint(tablet) {
+					width: 100vw;
+				}
+				video {
+					width: 100%;
+				}
+			}
+		}
+		h3 {
+			@include breakpoint(tablet) {
+				margin-bottom: 6rem;
+				margin-top: 2rem;
+			}
+			@include breakpoint(mobile) {
+				margin-bottom: 3rem;
+			}
+		}
+		h3,
+		a {
+			font-size: 6.6rem!important;
+			line-height: 1.2!important;
+			order: 2;
+			font-weight: 700;
+			@include breakpoint(mobile) {
+				font-size: 3.6rem!important;
+			}
+		}
+		p.info {
+			margin-bottom: 4rem;
+			font-size: 1.8rem;
+			order: 1;
+		}
+		.post-intro {
+			width: 50%;
+			height: 100%;
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			//align-items: center;
+			@include breakpoint(tablet) {
+				width: 100%;
+				margin: 3rem 0;
+			}
+			@include breakpoint(mobile) {
+				margin:  0;
+			}
+		}
+	}
+	.single-content {
+		padding: 0 14rem;
+		padding-bottom: 14rem;
+		@include breakpoint(tablet) {
+			padding: 0 7rem;
+			padding-bottom: 10rem;
+		}
+		@include breakpoint(mobile) {
+			padding: 0 1rem;
+			padding-bottom: 6rem;
+		}
+		p {
+			margin: 1.8rem 0;
+			line-height: 1.8;
+		}
+	}
+	.post-list {
+		.post-full{
+			float: none;
+			margin-bottom: 19rem;
+			@include breakpoint(tablet) {
+				margin-bottom: 10rem;
+			}
+			.img-wrapper {
+				position: absolute;
+				width: 75rem;
+				height: 63rem;
+				right: 0;
+				top: 12.2rem;
+				overflow: hidden;
+				@include breakpoint(tablet) {
+					position: relative;
+					width: 100vw;
+					top: 0;
+					margin-left: -4.6rem;
+				}
+				@include breakpoint(mobile) {
+					height: 40rem;
+				}
+				&:after {
+					@include breakpoint(tablet) {
+						content: "";
+						position: absolute;
+						top: 0;
+						left: 0;
+						width: 100%;
+						height: 100%;
+						background: rgba(0,0,0,0.2);
+					}
+				}
+				img {
+					@include absolute(center);
+					width: 130%;
+				}
+
+			}
+			.post-intro {
+				width: 50%;
+				height: 100%;
+				display: flex;
+				flex-direction: column;
+				justify-content: center;
+				//align-items: center;
+				@include breakpoint(tablet) {
+					display: block;
+					width: 80%;
+					@include absolute(center);
+					height: auto;
+				}			
+			}
+			h3,
+			a {
+				font-size: 6.6rem!important;
+				line-height: 1.2!important;
+				order: 2;
+				font-weight: 700;
+				@include breakpoint(tablet) {
+					color: $c-white;
+				}
+				@include breakpoint(mobile) {
+					font-size: 3.6rem!important;
+				}
+			}
+			p.info {
+				margin-bottom: 4rem;
+				font-size: 1.8rem;
+				order: 1;
+				@include breakpoint(tablet) {
+					color: $c-white;
+				}
+			}
+		}
+		.post-half {
+			&:nth-child(2n-1) {
+				margin-right: 0;
+			}
+			&:nth-child(2n) {
+				margin-right: 7%;
+			}
+		}
+	}
+	.btn-contact {
+		color: $c-morphMain;
+	}
+	.blog-bottom {
+		//margin-bottom: 20rem;
+	}
+}
+
+.page-single-post .single-top .video-wrapper video {
+	position: static;
+	transform: none;
+}
+
+.post-list {
+	.post-full {
+		width: 100%;
+		height: 61rem;
+		@include breakpoint(tablet) {
+			position: relative;
+			height: auto;
+			margin-bottom: 10rem;
+		}	
+	}
+}
+
+.blog-bottom {
+	position: relative;
+}
+
+.page-single-post .post-list .post-half:nth-child(2n-1) {
+	margin-right: 7%;
+}
+.page-single-post .post-list .post-half:nth-child(2n) {
+	margin-right: 0;
+}
+
+#single-pg .blog-section .container {
+	padding-top: 10rem;
+}
+#single-pg .blog-top .left {
+	position: relative;
+}
+
+#single-pg .blog-top .subtitle {
+	position: absolute;
+	top: 20%;
+	margin-bottom: 0;
+	right: 0;
+	@include breakpoint(tablet) {
+		position: static;
+	}
+}
+
+.filterPosts {
+	padding-bottom: 20rem;
+}
+
+.video-wrapper {
+	cursor: pointer;
+	z-index: auto;
+}
+
+.playpause {
+	z-index: 0;
+}
+
+.autoplay-box .playpause {
+	display: none!important;
+}
+
+.post {
+	.playpause {
+		display: none;
+	}
+}
+
+.blog-loader {
+	display: none;
+}

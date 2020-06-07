@@ -1,0 +1,11 @@
+
+
+    {% if __SELF__.isMulti %}
+
+        {% partial __SELF__ ~ '::video-multi' %}
+
+    {% else %}
+
+        {% partial __SELF__ ~ '::video-single' %}
+
+    {% endif %}

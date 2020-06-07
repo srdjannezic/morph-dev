@@ -1,0 +1,16 @@
+plugin:
+    name: 'standard.joinusquiz::lang.plugin.name'
+    description: 'standard.joinusquiz::lang.plugin.description'
+    author: standard
+    icon: oc-icon-question-circle
+    homepage: ''
+navigation:
+    main-menu-item:
+        label: 'Join us - Quiz'
+        url: /standard/joinusquiz/questions
+        icon: icon-magic
+        sideMenu:
+            side-menu-item:
+                label: Questions
+                url: /standard/joinusquiz/questions
+                icon: icon-question-circle

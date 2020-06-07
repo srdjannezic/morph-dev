@@ -1,0 +1,74 @@
+title = "Contact Us"
+url = "/contact-us"
+layout = "default"
+is_hidden = 0
+robot_index = "index"
+robot_follow = "follow"
+
+[genericForm contactForm]
+rules[name] = "required"
+rules[comments] = "required"
+rules[email] = "required|email"
+messages_success = "Your form was successfully submitted"
+messages_errors = "There were errors with your submission"
+mail_enabled = 0
+inline_errors = "disabled"
+js_on_success = "$('.input-wrapper, .textarea-wrapper,#apply-controls,.btn-send').hide();"
+sanitize_data = "disabled"
+anonymize_ip = "disabled"
+recaptcha_theme = "light"
+recaptcha_type = "image"
+recaptcha_size = "normal"
+==
+<div id="contact-pg">
+    <div class="container">
+        <section class="section contact-wrapper">
+            <div class="left">
+                <h2 class="title">Get <br>in Touch.</h2>
+                <div id="address-box">
+                    <i class="icon-location"></i>
+                    <div class="address">
+                        <p>Milutina Milankovića 1d</p>
+                      <!--   <p><a href="mailto:info@morphnetworks.com">info@morphnetworks.com</a></p> -->
+                        <!-- <p><a href="tel:+381 66 88 38 379">+381 66 88 38 379</a></p> -->
+                        <p><a href="mailto:info@morphnetworks.com">info@morphnetworks.com</a></p>
+                        <p><a href="#" class="get-directions">Get directions</a></p>
+                    </div>
+                   
+                   <!--  <div class="address">
+                        <p>Los Angeles, California</p>
+                        <p>+ 1 424 666 4366</p>
+                        <p><a href="">Get directions</a></p>
+                    </div> -->
+                </div>
+                <ul class="social-icons">
+                    <li><a href="#dummy"><i class="icon-facebook"></i></a></li>
+                    <li><a href="#dummy"><i class="icon-insta"></i></a></li>
+                    <li><a href="#dummy"><i class="icon-google"></i></a></li>
+                    <li><a href="#dummy"><i class="icon-linked"></i></a></li>
+                    <li><a href="#dummy"><i class="icon-yt"></i></a></li>    
+                </ul>
+            </div>
+            <div class="right">
+                {% component 'contactForm' %}
+            </div>
+        </section>
+    </div> 
+</div>
+
+
+  <!-- Modal -->
+  <div class="modal fade" id="directionsModal" role="dialog">
+    <div class="modal-dialog">
+      <div class="modal-header">
+         <button type="button" class="close" data-dismiss="modal">&times;</button>
+      </div>
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-body">
+          <img src="{{ url('themes/morph/assets/images/map.jpg') }}" style="width: 100%;" />
+        </div>
+      </div>
+      
+    </div>
+  </div>

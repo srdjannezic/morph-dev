@@ -1,0 +1,70 @@
+==
+{% set do_test_class = "" %}
+{% if isTestFinished %}
+	{% set do_test_class = "done" %}
+{% endif %}
+<div class="panel-group">
+<form data-request="{{ __SELF__ }}::onFormSubmit" class="apply-form" data-request-validate>
+
+    {{ form_token() }}
+
+    <div class="input-wrapper select-input">
+        <select class="select-box" id="position-picker" name="position">
+            <option>Pick a position ...</option>
+            {% for position in positions %}
+                <option value="{{ position.name }}" data-to="{{ position.id }}">{{ position.name }}</option>
+            {% endfor %}
+        </select>
+    </div>
+    <ul class="position-description">
+        {% for position in positions %}
+            <li class="desc-{{ position.id }} hide">{{ position.description | raw}}</li>
+        {% endfor %}
+    </ul>
+
+    <div class="input-wrapper">
+        <input type="text" id="name" name="name" placeholder="First Name">
+    </div>
+
+    <div class="input-wrapper">
+        <input type="text" id="lastname" name="lastname" placeholder="Last Name">
+    </div>
+
+    <div class="input-wrapper">
+        <input type="text" id="email" name="email" placeholder="Email">
+    </div>
+    
+    <div class="input-wrapper">
+        <input type="text" id="phone" name="phone" placeholder="Phone Number (eg. +381)">
+    </div>
+
+    <div class="textarea-wrapper">
+        <textarea id="comments" name="comments" rows="8" cols="80" placeholder="Comments"></textarea>
+    </div>
+
+    <div id="apply-controls">
+
+        <div class="upload-cv">
+            {% partial '@file-upload' %}
+        </div>
+
+        <div class="upload-cv">
+            <button type="button" class="ui button btn btn-default oc-icon-upload upload-button do-test {{ do_test_class }}">
+                Do the test
+            </button>
+        </div>
+
+        <div class="upload-cv upload-video">
+            {% partial '@video-upload' %}
+        </div>    
+
+    </div>
+    {% component 'Questions' %}
+    <div class="notice">
+        <p>* CV should be in Word or pdf file format, max. size 2MB</p>
+        <p>** Video should be up to 1 min length, max file size 5MB</p>
+    </div>
+    <div id="{{ __SELF__ }}_forms_flash"></div>
+    <button id="simpleContactSubmitButton" type="submit" class="btn-send">Send</button>
+</form>
+</div>

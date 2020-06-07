@@ -1,0 +1,113 @@
+//-------------------------
+//-------------FULL PAGE
+//-------------------------
+
+.fp-tableCell {
+	display: block!important;
+}
+
+.slick-slider-1 .slick-slide .slide-image {
+	height: 100%;
+	width: 100vw!important;
+}
+
+#fp-nav.fp-right {
+	margin-top: 0!important;
+	transform: translateX(100%)!important;
+	right: 7rem!important;
+	transition: all ease-in-out 1s;
+	z-index: 222;
+	li:first-child {
+		display: none;
+	}
+	&.start {
+		transform: translate(0%, -50%)!important;
+	}
+}
+
+#fp-nav ul li, .fp-slidesNav ul li {
+	width: 200px!important;
+	text-align: right;
+	margin: 2.7rem 0!important;
+	&:hover {
+		.fp-tooltip.fp-right {
+			opacity: 1;
+
+		}
+		a span {
+			background: $c-softAmber!important;
+			height: 16px!important;
+		    width: 16px!important;
+		    left: 199px!important;
+		}
+	}
+
+}
+
+#fp-nav ul li a span {
+	transform: translateY(-50%);
+    height: 14px!important;
+    width: 14px!important;
+    margin: 0px!important;
+	background: transparent!important;
+	border: 2px solid $c-softAmber!important;
+	transition: all ease-in-out 0.3s!important;
+}
+
+#fp-nav ul li a.active span {
+	background: $c-softAmber!important;
+	height: 16px!important;
+    width: 16px!important;
+    left: 199px!important;
+}
+
+#fp-nav ul li .fp-tooltip {
+	right: 2.2rem;
+	font-size: 15px!important;
+	color: $c-softAmber!important;
+	width: auto!important;
+	text-align: right!important;
+	font-family: $baseFont!important;
+}
+
+#fp-nav ul li a span, .fp-slidesNav ul li a span {
+	left: 100%!important;
+}
+
+#fp-nav ul li:hover a span {
+    margin: 0px!important;
+}
+
+#fp-nav ul li .fp-tooltip.fp-right {
+	opacity: 0;
+	transition: all ease-in-out 0.5s;
+}
+
+
+.fp-slidesContainer {
+	width: 100%!important;
+	height: 100vh!important;
+	transform: none!important;
+}
+
+.fp-slide {
+	width: 100%!important;
+	position: absolute;
+	left: 0;
+	top: 0;
+	visibility: hidden;
+	opacity: 0!important;
+	z-index: 0;
+	transition: all .7s ease-in-out;
+}
+
+.fp-slide.active {
+	visibility: visible;
+	opacity: 1!important;
+	z-index: 1;
+}
+
+
+
+
+

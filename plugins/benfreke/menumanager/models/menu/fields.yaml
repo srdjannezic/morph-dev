@@ -1,0 +1,74 @@
+fields:
+    title:
+        label: 'benfreke.menumanager::lang.modeldataform.title'
+        span: left
+        type: text
+    description:
+        label: 'benfreke.menumanager::lang.modeldataform.description'
+        span: right
+        type: text
+    enabled:
+        label: 'benfreke.menumanager::lang.modeldataform.enabled'
+        type: radio
+        options:
+            - 'benfreke.menumanager::lang.modeldataform.optdisabled'
+            - 'benfreke.menumanager::lang.modeldataform.optenabled'
+        default: 1
+        span: left
+    is_external:
+        label: 'benfreke.menumanager::lang.modeldataform.external'
+        options:
+            - 'benfreke.menumanager::lang.modeldataform.optinternal'
+            - 'benfreke.menumanager::lang.modeldataform.optexternal'
+        span: left
+        placeholder: 'benfreke.menumanager::lang.modeldataform.selectmenutype'
+        default: 0
+        cssClass: menumanager-type-controller
+        type: dropdown
+    internal_url:
+        label: 'benfreke.menumanager::lang.modeldataform.internalurl'
+        type: dropdown
+        placeholder: 'benfreke.menumanager::lang.modeldataform.internalurlplaceholder'
+        options: getUrlOptions
+        cssClass: 'menumanager-type type-0'
+        span: right
+    external_url:
+        label: Url
+        placeholder: 'benfreke.menumanager::lang.modeldataform.externalurl'
+        cssClass: 'menumanager-type type-1'
+        comment: 'benfreke.menumanager::lang.modeldataform.externalurlcomment'
+        span: right
+        type: text
+    type:
+        label: 'Box Type'
+        options:
+            full: full
+            half: half
+        span: auto
+        type: radio
+    link_target:
+        label: 'benfreke.menumanager::lang.modeldataform.linktarget'
+        type: radio
+        options:
+            _self: 'benfreke.menumanager::lang.modeldataform.self'
+            _blank: 'benfreke.menumanager::lang.modeldataform.blank'
+        default: _self
+    parameters:
+        label: 'benfreke.menumanager::lang.modeldataform.parameters'
+        commentAbove: 'benfreke.menumanager::lang.modeldataform.parameterscomment'
+        type: text
+        size: tiny
+    query_string:
+        label: 'benfreke.menumanager::lang.modeldataform.querystr'
+        commentAbove: 'benfreke.menumanager::lang.modeldataform.querystrcomment'
+        type: text
+        size: tiny
+    url:
+        label: 'benfreke.menumanager::lang.modeldataform.url'
+        cssClass: hidden
+        type: text
+    image:
+        label: Image
+        mode: file
+        span: auto
+        type: mediafinder

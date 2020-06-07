@@ -1,0 +1,44 @@
+//-------------------------
+//----------PAGINATION
+//-------------------------
+
+.pagination {
+	text-align: center;
+	margin-top: 6rem;
+	@include breakpoint(tablet) {
+		margin-top: 2rem;
+		margin-bottom: 6rem;
+	}
+	.page-link {
+		font-size: 0;
+	}
+	li {
+		display: none;
+		&:last-child,
+		&:first-child {
+			display: inline-block;
+
+		}
+		i {
+			font-size: 2rem;
+		}
+		.icon-arrow-left {
+			margin-right: 2.5rem;
+		}
+	}
+	.load-more {
+		color: $c-morphMain;
+		font-size: 2.2rem;
+		font-weight: 600;
+	}
+}
+
+.page-single-post,
+.page-about {
+	.pagination {
+		text-align: left;
+	}
+	.filterPosts {
+		padding-bottom: 6rem;
+	}
+}

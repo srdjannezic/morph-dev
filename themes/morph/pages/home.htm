@@ -1,0 +1,51 @@
+title = "Home"
+url = "/"
+layout = "default"
+is_hidden = 0
+robot_index = "index"
+robot_follow = "follow"
+
+[slider]
+slide_show_id = 1
+
+[xblocks]
+categoryFilter = 2
+regionFilter = 1
+
+[xblocks xblocks2]
+categoryFilter = 3
+regionFilter = 1
+
+[xblocks xblocks3]
+categoryFilter = 4
+regionFilter = 1
+
+[xblocks xblocks4]
+categoryFilter = 5
+regionFilter = 1
+==
+<div id="fullpage">
+    <section class="section hero-slider">
+        {% component 'slider' %}
+    </section>
+    <section class="section about">
+    		<div class="section-content">
+        		{% component 'xblocks' %}
+        	</div>
+    </section>
+    <section class="section services">
+        	<div class="section-content">
+                {% component 'xblocks2' %}
+        	</div>
+    </section>
+    <section class="section join-team">
+        	<div class="section-content">
+        		{% component 'xblocks3' %}
+        	</div>
+    </section>
+    <section class="section virtual-tour">
+        	<div class="section-content">
+        		{% component 'xblocks4' %}
+        	</div>
+    </section>
+</div>

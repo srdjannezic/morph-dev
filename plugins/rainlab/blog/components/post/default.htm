@@ -1,0 +1,40 @@
+{% set post = __SELF__.post %}
+{% set img = 'storage/app/media/' ~ post.featured %}
+
+
+
+<div class="single-top">
+    <div class="post-intro">
+        {{ post.published_at|date('M d, Y') }}
+        <h3>{{ post.title }}</h3>
+    </div>
+    
+    {% if post.video %}
+        <div class="image-box">
+        {% partial "video" video=post.video thumbnail=post.thumbnail autoplay=post.is_autoplay region_id="single" %}
+        </div>
+    {% else %}
+    <div class="img-wrapper">
+        <img src="{{ url(img) }}" class="single-image" />
+    </div>
+    {% endif %}
+</div>
+
+<div class="single-content">
+    {{ post.content_html|raw }}
+    <ul class="social-icons">
+        <li><a href="#dummy"><i class="icon-facebook"></i></a></li>
+        <li><a href="#dummy"><i class="icon-google"></i></a></li>
+        <li><a href="#dummy"><i class="icon-linked"></i></a></li>    
+    </ul>
+</div>
+
+<!-- <p class="info">
+    Posted
+    {% if post.categories.count %} in
+        {% for category in post.categories %}
+            <a href="{{ category.url }}">{{ category.name }}</a>{% if not loop.last %}, {% endif %}
+        {% endfor %}
+    {% endif %}
+    on {{ post.published_at|date('M d, Y') }}
+</p> -->

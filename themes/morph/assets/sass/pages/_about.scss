@@ -1,0 +1,530 @@
+//-------------------------
+//------------ABOUT PAGE
+//-------------------------
+
+.page-about,
+.page-join-our-team,
+.page-blog,
+.page-single-post {
+	.header {
+		.logo {
+			@include breakpoint(mobile) {
+				transform: translateY(-50%);
+			}
+		}
+	}
+}
+
+.page-about {
+	.section {
+		z-index: auto;
+	}
+}
+
+#about-pg {
+	.slideInRight {
+		transition: all ease-in-out 2s;
+	    animation-duration: 2s!important;
+		animation-delay: 0.5s!important;
+	}
+	.hero-slider {
+		.slide-image {
+			min-height: auto;
+			height: 100vh;
+		}
+	}
+	.section:nth-child(odd) {
+		//background-color: $c-white;
+	}
+	.section {
+		.container {
+			@extend %clearfix;
+		}
+		.subtitle {
+			margin-top: 6rem;
+			@include breakpoint(tablet) {
+				margin-top: 0;
+			}
+		}
+		.left .text {
+			padding-right: 6rem;
+			@include breakpoint(tablet) {
+				order: 3;
+			}
+			@include breakpoint(mobile) {
+				padding-right: 0;
+			}
+		}
+		.left {
+			@include breakpoint(tablet) {
+				height: auto;
+			}
+		}
+		&-0,
+		&-1,
+		&-2,
+		&-3 {
+			.img-1,
+			.video-wrapper,
+			.video-box {
+				position: absolute;
+				right: 0;
+				@include breakpoint(tablet) {
+					position: static;
+					float: right;
+					margin-right: -4.6rem;
+				}
+			}
+			.video-wrapper,
+			.video-box {
+				width: 73rem;
+				height: 58rem;
+				overflow: hidden;
+				transition: all ease-in-out 0.3s;
+				@include breakpoint(tablet) {
+					position: relative;
+				}
+				@include breakpoint(mobile) {
+					width: 36.45rem;
+					height: 27.05rem;
+				}
+				video {
+					width: 100%;
+					height: auto;
+					@include absolute(center);
+					@include breakpoint(tablet) {
+						position: static;
+						transform: none;
+					}
+				}
+				.img-thumbnail {
+					@include absolute(center);
+					width: 100%;
+					height: auto;
+					@include breakpoint(tablet) {
+						position: static;
+						transform: none;
+					}
+					img {
+						width: 100%;
+						height: auto;
+					}
+				}
+				&.wideVideo {
+					width: 65vw;
+					@include breakpoint(tablet) {
+						width: 100vw;
+						height: auto;
+					}
+					video {
+						width: 100%;
+						height: auto!important;
+					}
+				}
+			}
+		}
+		.img-1 {
+			@include breakpoint(tablet)  {
+				position: relative;
+			}
+		}
+		&-0 {
+			margin-bottom: 10rem;
+			@include breakpoint(mobile) {
+				margin-bottom: 6rem;
+			}
+			.left {
+				min-height: 55rem;
+				@include breakpoint(tablet) {
+					min-height: auto;
+				}
+			}
+			.img-1,
+			.video-wrapper,
+			.video-box {
+				width: 73rem;
+				height: 54rem;
+				overflow: hidden;
+				@include breakpoint(mobile) {
+				    width: 43.45rem;
+    				height: 32.05rem;
+				}
+				&>img  {
+					width: auto;
+					height: 100%;
+					@include absolute(center);
+					@include breakpoint(tablet) {
+						position: static;
+						transform: none;
+
+					}
+				}
+				
+
+			}
+			.video-wrapper,
+			.video-box {
+				@include breakpoint(tablet) {
+					position: relative;
+				}
+			}
+		}
+
+		&-3 {
+			margin-bottom: 4rem;
+			padding-bottom: 12rem;
+			background-color: #eee;
+			.container {
+				padding-top: 0;
+				@include breakpoint(tablet) {
+					padding-top: 8rem;
+				} 
+			}
+			.left {
+				min-height: 49.8rem;
+				@include breakpoint(mobile) {
+					min-height: auto;
+				}
+			}
+			.img-1 {
+				top: 10rem;
+				width: 54.5rem;
+				height: 50rem;
+				overflow: hidden;
+				@include breakpoint(tablet) {
+					top: 0;
+				}
+				@include breakpoint(mobile) {
+					top: auto;
+					width: 38rem;
+    				height: 28rem;
+				}
+				img {
+					@include absolute(center);
+					height: auto;
+					width: 100%;
+				}
+			}
+			.img-2 {
+				position: absolute;
+				bottom: 4rem;
+				width: 46.5rem;
+				height: 31rem;
+				overflow: hidden;
+				@include breakpoint(mobile) {
+					width: 28rem;
+					height: 18rem;
+					bottom: 4rem;
+				}
+				img {
+					@include absolute(center);
+					width: auto;
+					height: 100%;
+				}
+			}
+			.left {
+				padding-right: 3rem;
+				@include breakpoint(mobile) {
+					padding-right: 0;
+				}
+			}
+		}
+		&-1 {
+			margin-bottom: 6rem;
+			background-color: $c-white;
+			@include breakpoint(tablet) {
+				height: auto;
+			}
+			.container {
+				padding-top: 0;
+			}
+			.right {
+				min-height: 59.5rem;
+				@include breakpoint(tablet) {
+					min-height: auto;
+				}
+			}
+			.subtitle,
+			.title {
+				display: none;
+			}
+			.container {
+				@include breakpoint(tablet) {
+					display: flex;
+					flex-direction: column;
+				}
+			}
+			.left {
+				@include breakpoint(tablet) {
+					order: 2;
+				}
+
+			}
+			.text {
+				@include breakpoint(tablet) {
+					margin-bottom: 0;
+				}
+			}
+			.right {
+				float: right;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+			}
+			.img-1,
+			.video-wrapper,
+			.video-box {
+				position: absolute;
+				left: 0;
+				right:auto;
+				width: 73rem;
+				height: 59.5rem;
+				overflow: hidden;
+				@include breakpoint(tablet) {
+					position: relative;
+					margin-top: 4rem;
+					margin-left: -4.6rem;
+					float: left;
+					height: auto;
+				}
+
+				@include breakpoint(mobile) {
+					width: 100vw;
+					height: auto;
+				}
+				&>img {
+					@include absolute(center);
+					width: auto;
+					height: 100%;
+				}
+				video {
+					width: 100%;
+					height: auto;
+				}
+			}
+			.right {
+				padding-left: 3rem;
+				@include breakpoint(tablet) {
+					order: 1;
+					padding-left: 0;
+				}
+			}
+		}
+		&-2 {
+			margin-bottom: 10rem;
+			@include breakpoint(tablet) {
+				margin-bottom: 10rem;
+			}
+			.container {
+				padding-top: 0;
+			}
+			.subtitle,
+			.title {
+				display: none;
+			}
+			.left {
+				min-height: 54.1rem;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				@include breakpoint(mobile) {
+					min-height: auto;
+				}
+			}
+			.img-1,
+			.video-wrapper,
+			.video-box {
+				width: 73rem;
+				height: 54rem;
+				overflow: hidden;
+				@include breakpoint(tablet) {
+					height: auto;
+				}
+				@include breakpoint(mobile) {
+					width: 43.5rem;
+    				height: auto;
+				}
+				&>img {
+					@include absolute(center);
+					width: auto;
+					height: 120%;
+				}
+			}
+			.left {
+				padding-right: 3rem;
+				@include breakpoint(tablet) {
+					padding-right: 0;
+				}
+			}
+		}
+	}
+}
+
+#about-pg,
+#single-pg {
+	.blog-section {
+		padding-bottom: 20rem;
+		//background-color: #eee;
+		z-index: auto;
+		.container {
+			padding-top: 5rem;
+		}
+		.row {
+			position: relative;
+			z-index: 99;
+		}
+	}
+	.section-0 {
+		background-color: $c-white;
+	}
+	.blog-top {
+		display: table-row;
+		@include breakpoint(tablet){
+			display: block;
+			margin-bottom: 8rem;
+		}
+		.section {
+			margin-bottom: 2rem;
+			//background-color: #eee;
+			 .container {
+			 	padding-left: 0;
+			 	padding-right: 0;
+			 }
+		}
+		.left,
+		.right {
+			float: none;
+			display: table-cell;
+			vertical-align: middle;
+			@include breakpoint(tablet) {
+				display: block;
+			}
+		}
+		.left {
+			@include breakpoint(tablet) {
+				display: flex;
+				flex-direction: column;
+			}
+		}
+		.right {
+			padding-left: 3rem;
+			@include breakpoint(tablet) {
+				padding-left: 0;
+			}
+		}
+		.subtitle {
+			margin-top: 0;
+			@include breakpoint(tablet) {
+				order: 2;
+			}
+		}
+		.title {
+			@include breakpoint(tablet) {
+				order: 1;
+			}
+		}
+		.right p {
+			font-size: 1.4rem;
+			line-height: 1.7;
+			@include breakpoint(tablet) {
+				font-size: 3.2rem;
+			}
+			@include breakpoint(mobile) {
+				font-size: 2.3rem;
+			}
+		}
+		.text {
+			@include breakpoint(tablet) {
+				margin-bottom: 0;
+			}
+		}
+	}
+	.post-list {
+		.post-full {
+			float: left;
+			width: 46.5%;
+			height: auto;
+			@include breakpoint(mobile) {
+				width: 100%;
+				margin-right: 0;
+				margin-bottom: 6rem;
+			}
+			img {
+				position: static;
+				height: auto;
+				width: 100%;
+			}
+		}
+	}
+}
+
+.post-list {
+	width: 100%;
+	@extend %clearfix;
+	.post-half,
+	.post-full {
+		float: left;
+		width: 46.5%;
+		margin-right: 7%;
+		margin-bottom: 4rem;
+	    
+		@include breakpoint(mobile) {
+			width: 100%;
+			margin-right: 0;
+			margin-bottom: 6rem;
+		}
+		&:nth-of-type(2n) {
+			margin-right: 0;
+		}
+		.img-wrapper,
+		.video-wrapper,
+		.video-box {
+			position: relative;
+			width: 100%;
+			height: 31.6rem;
+			margin-bottom: 4rem;
+			overflow: hidden;
+
+			@include breakpoint(tablet) {
+				height: 28rem;
+			}
+			@include breakpoint(mobile--s) {
+				height: 25rem;
+			}
+			img {
+				width: 100%;
+				height: auto;
+			}
+			video {
+				width: 100%;
+				height: 100%;
+			}
+			video {
+				width: 120%;
+				height: auto;
+			}
+		}
+		h3 {
+			margin-bottom: 2.4rem;
+		}
+		h3, a {
+			font-size: 2.3rem;
+			line-height: 1.4; 	
+			color: $c-titleColor;
+		}
+		.info {
+			font-size: 1.4rem;
+			font-weight: 400;
+			color: #646464;
+		}
+	}
+	.post-half {
+		position: relative;
+		z-index: 555;
+		@include breakpoint(tablet) {
+			z-index: 0;
+		}
+	}
+}
+
+

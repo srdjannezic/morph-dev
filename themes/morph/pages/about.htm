@@ -1,0 +1,44 @@
+title = "About"
+url = "/about"
+layout = "default"
+is_hidden = 0
+robot_index = "index"
+robot_follow = "follow"
+
+[slider]
+slide_show_id = 2
+
+[xblocks]
+categoryFilter = 2
+regionFilter = 2
+
+[blogPosts]
+pageNumber = "{{ :page }}"
+postsPerPage = 2
+noPostsMessage = "No posts found"
+sortOrder = "published_at desc"
+categoryPage = 404
+postPage = 404
+
+[xblocks xblocks2]
+
+[xblocks xblocks3]
+categoryFilter = 7
+regionFilter = 2
+==
+<div id="about-pg">
+    <section class="section hero-slider">
+        {% component 'slider' %}
+    </section>
+    {% component 'xblocks' %}
+    <section class="section blog-section">
+        <div class="container">
+        	<div class="blog-top">
+	        	{% component 'xblocks3' %}
+			</div>
+            {% component 'blogPosts' %}
+            
+        </div>
+    </section>
+   <something>
+</div>

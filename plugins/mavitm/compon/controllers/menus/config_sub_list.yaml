@@ -1,0 +1,22 @@
+title: Menu
+modelClass: Mavitm\Compon\Models\Menu
+list: $/mavitm/compon/models/menu/subList.yaml
+recordUrl: 'mavitm/compon/menus/update/:id/:id'
+noRecordsMessage: 'backend::lang.list.no_records'
+
+showCheckboxes: true
+showTree: true
+toolbar:
+    buttons: list_toolbar
+    search:
+        prompt: 'backend::lang.list.search_prompt'
+defaultSort:
+    column: sort_order
+    direction: asc
+recordsPerPage: 50
+showCheckboxes: true
+showSetup: true
+
+defaultSort:
+    column: sort_order
+    direction: asc

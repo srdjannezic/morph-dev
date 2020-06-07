@@ -1,0 +1,14 @@
+1.0.1:
+    - 'Initialize plugin.'
+1.0.2:
+    - 'Created table standard_joinusquiz_questions'
+    - builder_table_create_standard_joinusquiz_questions.php
+1.0.3:
+    - 'Created table standard_joinusquiz_answers'
+    - builder_table_create_standard_joinusquiz_answers.php
+1.0.4:
+    - 'Updated table standard_joinusquiz_answers'
+    - builder_table_update_standard_joinusquiz_answers.php
+1.0.5:
+    - 'Updated table standard_joinusquiz_questions'
+    - builder_table_update_standard_joinusquiz_questions.php
